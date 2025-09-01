@@ -456,7 +456,7 @@ export default function AcademyLanding({
               <div className="relative">
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-2xl ring-1 ring-black/5">
                   <Image
-                    src="/mentor-student-pair-programming.png"
+                    src="/mentor-student-pair-programming-ro.png"
                     alt={locale === "en" ? "Mentor guiding a student" : "Mentor ghidând un student"}
                     fill
                     className="object-cover"
@@ -651,7 +651,7 @@ export default function AcademyLanding({
               <div className="relative">
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/20">
                   <Image
-                    src="/confident-coding-student.png"
+                    src="/confident-coding-student-ro.png"
                     alt={locale === "en" ? "Student coding confidently" : "Student care codează cu încredere"}
                     fill
                     className="object-cover"
