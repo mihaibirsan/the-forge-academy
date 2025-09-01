@@ -59,14 +59,14 @@ export default function AcademyLanding({
         },
       },
       labels: {
-        duration: { en: "3–6 months", ro: "3–6 luni" },
+        duration: { en: "30 hrs/week", ro: "30 ore/săpt" },
         proven: { en: "Proven results", ro: "Rezultate dovedite" },
         beginner: { en: "Beginner friendly", ro: "Potrivit pentru începători" },
       },
       footer: {
         rights: {
-          en: `© ${new Date().getFullYear()} Academy. All rights reserved.`,
-          ro: `© ${new Date().getFullYear()} Academia. Toate drepturile rezervate.`,
+          en: `© ${new Date().getFullYear()} Academia The Forge. All rights reserved.`,
+          ro: `© ${new Date().getFullYear()} Academia The Forge. Toate drepturile rezervate.`,
         },
         contact: { en: "Contact", ro: "Contact" },
         email: { en: "hello@example.com", ro: "hello@example.com" },
@@ -76,185 +76,184 @@ export default function AcademyLanding({
     const en = {
       hero: {
         title:
-          "Transform Your Future in Tech. Become a Junior Software Engineer in 3–6 Months!",
+          "Transform Your Future in Tech. Become a Full-Stack Web Developer in 3–6 Months!",
         subtitle:
-          "Passionate about technology but unsure where to start? Our academy prepares you to contribute meaningfully to real software teams.",
-        highlight: "From zero to junior engineer",
-        button: "Get Started",
+          "Academia The Forge offers an intensive full-stack web course that develops the necessary skills to create complete web applications and forms your analytical thinking oriented towards solutions.",
+        highlight: "From zero to full-stack developer",
+        button: "Learn More",
       },
       about: {
-        heading: "About the Academy",
+        heading: "About Academia The Forge",
         body:
-          "We’re a team of experienced engineers and mentors with a track record of helping beginners land their first roles in software. We focus on practical, team-based learning so you can ship real features confidently.",
-        offersHeading: "What We Offer",
+          "Academia The Forge offers an intensive full-stack web course aimed at developing necessary skills, creating end-to-end web applications – from browser interface to database – while developing analytical thinking and solution-oriented approach.",
+        offersHeading: "What You'll Learn",
         offers: [
-          "Practical courses created by experts with years of industry experience.",
-          "An intensive program designed to take you from zero knowledge to junior engineer level in just 3–6 months.",
-          "Personalized support and mentorship throughout the learning process.",
-          "A vibrant community of students passionate about technology.",
+          "JavaScript Fundamentals - syntax, data types, control structures and algorithmic thinking",
+          "Version control with Git and GitHub for efficient team collaboration",
+          "Back-End Development with Node.js and creating robust web servers",
+          "REST APIs and HTTP routes for front-end to back-end communication",
         ],
       },
       program: {
-        heading: "Program Details",
+        heading: "Complete Curriculum",
         sub:
-          "A clear path from fundamentals to team-ready engineer, with hands-on projects and mentorship.",
+          "A structured program that takes you from beginner to full-stack developer ready for real software teams.",
         items: [
           {
-            title: "Foundations",
+            title: "JavaScript & Git",
             desc:
-              "Programming fundamentals, Git, problem solving, and modern web basics.",
+              "JavaScript fundamentals, version control with Git and GitHub, algorithmic thinking and problem solving.",
             icon: Code2,
           },
           {
-            title: "Projects",
+            title: "Back-End Development",
             desc:
-              "Build real apps with reviews and feedback to accelerate your learning.",
+              "Node.js, REST APIs, HTTP routes, middleware, authentication and authorization for secure applications.",
             icon: Rocket,
           },
           {
-            title: "Teamwork",
+            title: "Databases & Front-End",
             desc:
-              "Agile, code reviews, tickets, and collaboration to simulate real teams.",
+              "Data storage and querying, HTML & CSS, React for interactive and responsive interfaces.",
             icon: Users2,
           },
           {
-            title: "Career Support",
+            title: "Deployment & Analytical Thinking",
             desc:
-              "Portfolio, interview prep, and guidance until you land your first role.",
+              "Launching applications to production and developing critical thinking oriented towards solutions.",
             icon: Briefcase,
           },
         ],
       },
       success: {
-        heading: "Success Stories",
-        sub: "Real people. Real outcomes.",
+        heading: "Your Success is Our Goal",
+        sub: "We believe in every student's potential. As long as you're willing to work and actively engage, we'll help you achieve your goals.",
       },
       faq: {
         heading: "Frequently Asked Questions",
         items: [
           {
             q: "How long does the program take?",
-            a: "Most students complete the program in 3 to 6 months depending on weekly availability and prior experience.",
+            a: "The program lasts between 3-6 months, depending on your learning pace and weekly availability.",
           },
           {
-            q: "Do I need prior coding experience?",
-            a: "No. The program is beginner friendly. We start with fundamentals and provide mentorship along the way.",
+            q: "What is the required weekly commitment?",
+            a: "Individual involvement, besides sessions with the mentor, is approximately 30 hours per week.",
           },
           {
-            q: "What is the weekly time commitment?",
-            a: "Plan for 10–20 hours per week. More time accelerates progress.",
+            q: "Do I need prior programming experience?",
+            a: "No prior experience is necessary. The program is designed to take you from zero knowledge to junior engineer level.",
           },
           {
-            q: "Is there financing or installment plans?",
-            a: "Yes, flexible options are available. Contact us to learn more.",
+            q: "What course options are available?",
+            a: "We offer group courses (standard cost, peer collaboration) and individual 1-on-1 courses with mentor (personalized program, higher cost).",
           },
           {
-            q: "Do I get a certificate?",
-            a: "You’ll receive a completion certificate and a reviewed portfolio demonstrating your skills.",
+            q: "What technologies will I learn?",
+            a: "JavaScript, Git/GitHub, Node.js, REST APIs, databases, HTML/CSS, React, deployment and many others necessary for full-stack development.",
           },
           {
-            q: "Will you help me get a job?",
-            a: "We provide interview prep, portfolio reviews, and referrals. Your effort and consistency are key to success.",
+            q: "How does the registration process work?",
+            a: "You complete the registration form, followed by an individual interview, then receive all details for starting the courses.",
           },
         ],
       },
       finalCta: {
-        heading: "Ready to change your career?",
+        heading: "Ready to Change Your Career?",
         sub:
-          "Spaces are limited. Sign up now to learn more and reserve your spot in the next cohort.",
-        button: "Fill the registration form",
+          "Academia The Forge believes in every student's potential. If you're willing to work and dedicate the necessary time, we'll help you start your full-stack web developer career on the right foot.",
+        button: "Complete the Registration Form",
       },
     }
 
     const ro = {
       hero: {
         title:
-          "Transformă-ți viitorul în Tech. Devino Junior Software Engineer în 3–6 luni!",
+          "Transformă-ți viitorul în Tech. Devino dezvoltator web full-stack în 3–6 luni!",
         subtitle:
-          "Ești pasionat de tehnologie, dar nu știi de unde să începi? Academia noastră te pregătește să contribui cu încredere într-o echipă reală de software.",
-        highlight: "De la zero la junior engineer",
-        button: "Începe",
+          "Academia The Forge oferă un curs intensiv de web full-stack care îți dezvoltă competențele necesare pentru a crea aplicații web complete și îți formează gândirea analitică orientată spre soluții.",
+        highlight: "De la zero la dezvoltator full-stack",
+        button: "Află mai multe",
       },
       about: {
-        heading: "Despre Academie",
+        heading: "Despre Academia The Forge",
         body:
-          "Suntem o echipă de ingineri și mentori cu experiență, cu rezultate dovedite în a ajuta începătorii să își obțină primul rol în software. Punem accent pe învățarea practică, în echipă, astfel încât să poți livra funcționalități reale cu încredere.",
-        offersHeading: "Ce oferim",
+          "Academia The Forge oferă un curs intensiv de web full-stack, care are ca scop dezvoltarea competențelor necesare, crearea unei aplicații web cap-coadă – de la interfața din browser până la baza de date – și îți va dezvolta totodată gândirea analitică și orientarea spre soluții.",
+        offersHeading: "Ce vei învăța",
         offers: [
-          "Cursuri practice, create de experți cu ani de experiență în industrie.",
-          "Un program intensiv, conceput să te ducă de la zero la nivel de junior engineer în doar 3–6 luni.",
-          "Suport personalizat și mentorat pe tot parcursul procesului de învățare.",
-          "O comunitate vibrantă de studenți pasionați de tehnologie.",
+          "Fundamentele JavaScript - sintaxa, tipurile de date, structurile de control și gândirea algoritmică",
+          "Controlul versiunilor cu Git și GitHub pentru colaborare eficientă în echipă",
+          "Dezvoltare Back-End cu Node.js și crearea de servere web robuste",
+          "API REST și rute HTTP pentru comunicarea front-end cu back-end-ul",
         ],
       },
       program: {
-        heading: "Detalii despre program",
-        sub:
-          "Un drum clar de la fundamente la inginer pregătit de lucru în echipă, cu proiecte practice și mentorat.",
+        heading: "Curriculum complet",
+        sub: "Un program structurat care te duce de la începător la dezvoltator full-stack pregătit pentru echipele reale de software.",
         items: [
           {
-            title: "Fundamente",
+            title: "JavaScript & Git",
             desc:
-              "Bazele programării, Git, rezolvarea de probleme și noțiuni moderne de web.",
+              "Fundamentele JavaScript, controlul versiunilor cu Git și GitHub, gândire algoritmică și rezolvarea problemelor.",
             icon: Code2,
           },
           {
-            title: "Proiecte",
+            title: "Back-End Development",
             desc:
-              "Construiește aplicații reale cu feedback și revizuiri pentru a accelera învățarea.",
+              "Node.js, API REST, rute HTTP, middleware, autentificare și autorizare pentru aplicații sigure.",
             icon: Rocket,
           },
           {
-            title: "Lucru în echipă",
+            title: "Baze de Date & Front-End",
             desc:
-              "Agile, code review, tichete și colaborare ca într-o echipă reală.",
+              "Stocare și interogare date, HTML & CSS, React pentru interfețe interactive și responsive.",
             icon: Users2,
           },
           {
-            title: "Suport în carieră",
+            title: "Deployment & Gândire Analitică",
             desc:
-              "Portofoliu, pregătire pentru interviu și ghidare până la primul rol.",
+              "Lansarea aplicațiilor în producție și dezvoltarea gândirii critice orientate spre soluții.",
             icon: Briefcase,
           },
         ],
       },
       success: {
-        heading: "Povești de succes",
-        sub: "Oameni reali. Rezultate reale.",
+        heading: "Succesul tău este ținta noastră",
+        sub: "Credem în potențialul fiecărui student. Atâta timp cât ești dispus să muncești și să te implici activ, te vom ajuta să îți atingi obiectivele.",
       },
       faq: {
         heading: "Întrebări frecvente",
         items: [
           {
-            q: "Cât durează programul?",
-            a: "Majoritatea studenților finalizează în 3–6 luni, în funcție de disponibilitate și experiență anterioară.",
+            q: "Cât timp durează programul?",
+            a: "Programul durează între 3-6 luni, în funcție de ritmul tău de învățare și disponibilitatea săptămânală.",
           },
           {
-            q: "Am nevoie de experiență anterioară?",
-            a: "Nu. Programul este potrivit pentru începători. Începem cu fundamentele și oferim mentorat pe parcurs.",
+            q: "Care este implicarea săptămânală necesară?",
+            a: "Implicarea individuală, pe lângă sesiunile cu mentorul, este de aproximativ 30 de ore pe săptămână.",
           },
           {
-            q: "Care este implicarea săptămânală?",
-            a: "Planifică 10–20 ore pe săptămână. Mai mult timp accelerează progresul.",
+            q: "Am nevoie de experiență anterioară în programare?",
+            a: "Nu este necesară experiența anterioară. Programul este conceput să te ducă de la zero cunoștințe la nivel de junior engineer.",
           },
           {
-            q: "Există finanțare sau rate?",
-            a: "Da, există opțiuni flexibile. Contactează-ne pentru detalii.",
+            q: "Ce opțiuni de curs sunt disponibile?",
+            a: "Oferim cursuri în grup (cost standard, colaborare între colegi) și cursuri individuale 1-la-1 cu mentorul (program personalizat, cost mai ridicat).",
           },
           {
-            q: "Primesc un certificat?",
-            a: "Primești un certificat de finalizare și un portofoliu revizuit care îți demonstrează competențele.",
+            q: "Ce tehnologii voi învăța?",
+            a: "JavaScript, Git/GitHub, Node.js, API REST, baze de date, HTML/CSS, React, deployment și multe altele necesare pentru dezvoltarea full-stack.",
           },
           {
-            q: "Mă ajutați să îmi găsesc un job?",
-            a: "Oferim pregătire pentru interviu, revizuiri de portofoliu și recomandări. Efortul tău consecvent este cheia succesului.",
+            q: "Cum funcționează procesul de înscriere?",
+            a: "Completezi formularul de înscriere, urmează un interviu individual, apoi primești toate detaliile pentru începerea cursurilor.",
           },
         ],
       },
       finalCta: {
         heading: "Pregătit să îți schimbi cariera?",
         sub:
-          "Locurile sunt limitate. Înscrie-te acum pentru a afla mai multe și a-ți rezerva locul în următoarea cohortă.",
+          "Academia The Forge crede în potențialul fiecărui student. Dacă ești dispus să muncești și să dedicatești timpul necesar, te vom ajuta să pornești cu dreptul în cariera de dezvoltator web full-stack.",
         button: "Completează formularul de înscriere",
       },
     }
@@ -278,7 +277,7 @@ export default function AcademyLanding({
           <div className="flex h-16 items-center justify-between">
             <Link href="#" className="flex items-center gap-2">
               <GraduationCap className="h-6 w-6 text-[#6246EA]" aria-hidden="true" />
-              <span className={`font-semibold ${headingFont}`}>Academy</span>
+              <span className={`font-semibold ${headingFont}`}>Academia The Forge</span>
               <Badge className="ml-1 bg-[#FEE07A] hover:bg-[#FEE07A] text-[#212429] border border-[#F3D652]">
                 {t.common.labels.proven[locale]}
               </Badge>
