@@ -276,11 +276,8 @@ export default function AcademyLanding({
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex h-16 items-center justify-between">
             <Link href="#" className="flex items-center gap-2">
-              <GraduationCap className="h-6 w-6 text-[#6246EA]" aria-hidden="true" />
+              <img src="/the-forge-symbol.png" alt="The Forge Symbol" className="h-6 text-[#6246EA]" aria-hidden="true" />
               <span className={`font-semibold ${headingFont}`}>Academia The Forge</span>
-              <Badge className="ml-1 bg-[#FEE07A] hover:bg-[#FEE07A] text-[#212429] border border-[#F3D652]">
-                {t.common.labels.proven[locale]}
-              </Badge>
             </Link>
 
             <nav className="hidden md:flex items-center gap-6">
