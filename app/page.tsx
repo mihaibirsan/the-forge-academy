@@ -15,8 +15,7 @@ const openSans = Open_Sans({
 export default function Page() {
   return (
     <AcademyLanding
-      // Replace with your actual Google Form URL
-      formUrl="https://forms.gle/example"
+      formUrl="https://forms.gle/w29mizNkhcNMPy1m9"
       defaultLocale="ro"
       headingFont={montserrat.className}
       bodyFont={openSans.className}
