@@ -120,7 +120,7 @@ export default function AcademyLanding({
         title:
           "Transform Your Future in Tech. Become a Full-Stack Web Developer in 3–6 Months!",
         subtitle:
-          "Academia The Forge offers an intensive full-stack web course that develops the necessary skills to create complete web applications and forms your analytical thinking oriented towards solutions.",
+          "There are no shortcuts to becoming a programmer. There is only work, feedback, and real projects. At The Forge Academy, you learn to code, solve problems, and build complete web applications in 3 months. And in the end, you not only have technical skills but also the confidence that you can deliver.",
         highlight: "From zero to full-stack developer",
         button: "Learn More",
       },
@@ -261,10 +261,10 @@ export default function AcademyLanding({
     const ro = {
       hero: {
         title:
-          "Transformă-ți viitorul în Tech. Devino dezvoltator web full-stack în 3–6 luni!",
+          "Transformă-ți viitorul în Tech. Devino programator web full-stack în 3–6 luni!",
         subtitle:
-          "Academia The Forge oferă un curs intensiv de web full-stack care îți dezvoltă competențele necesare pentru a crea aplicații web complete și îți formează gândirea analitică orientată spre soluții.",
-        highlight: "De la zero la dezvoltator full-stack",
+          "Nu există scurtături în a deveni programator. Există doar muncă, feedback și proiecte reale. La Academia The Forge, înveți în 3 luni să scrii cod, să rezolvi probleme și să construiești aplicații web complete. Iar la final, nu ai doar skilluri tehnice, ci și încrederea că poți livra.",
+        highlight: "De la zero la programator full-stack",
         button: "Află mai multe",
       },
       about: {
