@@ -1,6 +1,8 @@
 "use client"
 
 import { useMemo, useState } from "react"
+import { Components } from "react-markdown"
+import ReactMarkdown from "react-markdown"
 import Link from "next/link"
 import Image from "next/image"
 import {
@@ -31,6 +33,33 @@ type Props = {
   defaultLocale?: Locale
   headingFont?: string
   bodyFont?: string
+}
+
+// Component to render markdown text with custom styling
+const MarkdownText = ({ children, inline = false, className = "" }: { children: string; inline?: boolean; className?: string }) => {
+  const components: Components = {
+        p: ({ children }) => <p className="mb-3 last:mb-0">{children}</p>,
+        strong: ({ children }) => <strong className="font-semibold text-inherit">{children}</strong>,
+        em: ({ children }) => <em className="italic">{children}</em>,
+        ul: ({ children }) => <ul className="list-disc pl-4 space-y-1">{children}</ul>,
+        ol: ({ children }) => <ol className="list-decimal pl-4 space-y-1">{children}</ol>,
+        li: ({ children }) => <li>{children}</li>,
+  };
+
+  if (inline) {
+    return <ReactMarkdown
+      components={components}
+      disallowedElements={['p']}
+      unwrapDisallowed
+    >
+      {children}
+    </ReactMarkdown>
+  }
+  return <div className={`prose prose-sm max-w-none ${className}`}>
+    <ReactMarkdown components={components}>
+      {children}
+    </ReactMarkdown>
+  </div>;
 }
 
 export default function AcademyLanding({
@@ -424,16 +453,18 @@ export default function AcademyLanding({
                 <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>
                   {t.about.heading}
                 </h2>
-                <p className="mt-4 text-muted-foreground">
-                  {t.about.body}
-                </p>
+                <div className="mt-4 text-muted-foreground">
+                  <MarkdownText>{t.about.body}</MarkdownText>
+                </div>
 
                 <div className="mt-8 grid sm:grid-cols-2 gap-4">
                   {t.about.offers.map((item, i) => (
                     <Card key={i} className="border-[#EDEDED]">
-                      <CardContent className="p-4 flex items-start gap-3">
+                      <CardContent className="px-4 flex items-start gap-3">
                         <CheckCircle2 className="h-5 w-5 shrink-0 text-[#3F8CEB]" />
-                        <p className="text-sm">{item}</p>
+                        <p className="text-sm">
+                          <MarkdownText inline>{item}</MarkdownText>
+                        </p>
                       </CardContent>
                     </Card>
                   ))}
