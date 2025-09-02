@@ -44,6 +44,7 @@ const MarkdownText = ({ children, inline = false, className = "" }: { children: 
     ul: ({ children }) => <ul className="list-disc pl-4 space-y-1">{children}</ul>,
     ol: ({ children }) => <ol className="list-decimal pl-4 space-y-1">{children}</ol>,
     li: ({ children }) => <li>{children}</li>,
+    a: ({ children, href }) => <Link href={href!} className="text-blue-500 hover:underline">{children}</Link>
   };
 
   if (inline) {
@@ -189,28 +190,28 @@ export default function AcademyLanding({
         heading: "Frequently Asked Questions",
         items: [
           {
-            q: "How long does the program take?",
-            a: "The program lasts between 3-6 months, depending on your learning pace and weekly availability.",
+            q: "How long does the course last and how much time do I need to invest per week?",
+            a: "The group course lasts 3 months. You have 14 hours per week with the mentor + up to 30 hours of individual study and project work.\n\nThe 1:1 course includes 30 hours with the mentor, spread over a maximum of 6 months. The schedule is agreed upon together with the mentor.",
           },
           {
-            q: "What is the required weekly commitment?",
-            a: "Individual involvement, besides sessions with the mentor, is approximately 30 hours per week.",
+            q: "Do I need programming knowledge beforehand?",
+            a: "You only need the basics of computer science (what you learned in high school, college, or other courses in the field). You'll learn the rest with us, step by step.\n\nA requirement for the interview is to read book 1 of [the \"You Don't Know JS\" series by Kyle Simpson](https://github.com/getify/You-Dont-Know-JS/tree/1st-ed).",
           },
           {
-            q: "Do I need prior programming experience?",
-            a: "No prior experience is necessary. The program is designed to take you from zero knowledge to junior engineer level.",
+            q: "How is the student selection process conducted?",
+            a: "Before enrollment, you have a short online interview to ensure you're motivated and that the program suits you.",
           },
           {
-            q: "What course options are available?",
-            a: "We offer group courses (standard cost, peer collaboration) and individual 1-on-1 courses with mentor (personalized program, higher cost).",
+            q: "What happens if I can no longer continue the course?",
+            a: "Payment is monthly. If you withdraw, you don't pay for the following months, but the amount already paid is not refunded.",
           },
           {
-            q: "What technologies will I learn?",
-            a: "JavaScript, Git/GitHub, Node.js, REST APIs, databases, HTML/CSS, React, deployment and many others necessary for full-stack development.",
+            q: "Will I receive a certificate at the end?",
+            a: "Yes, upon course completion you receive a completion certificate issued by The Forge Academy and a recommendation upon request.",
           },
           {
-            q: "How does the registration process work?",
-            a: "You complete the registration form, followed by an individual interview, then receive all details for starting the courses.",
+            q: "Will you help me find a job after the course?",
+            a: "We don't promise guaranteed employment, but if opportunities arise from partner companies, we'll connect you with them. Additionally, the projects completed during the course provide you with a strong portfolio for interviews. We are directly interested in continuing your journey in IT.",
           },
         ],
       },
@@ -298,28 +299,28 @@ export default function AcademyLanding({
         heading: "Întrebări frecvente",
         items: [
           {
-            q: "Cât timp durează programul?",
-            a: "Programul durează între 3-6 luni, în funcție de ritmul tău de învățare și disponibilitatea săptămânală.",
+            q: "Cât durează cursul și cât timp trebuie să investesc pe săptămână?",
+            a: "Cursul de grup durează 3 luni. Ai 14 ore pe săptămână cu mentorul + până la 30 de ore de studiu individual și lucru la proiecte.\n\nCursul 1:1 include 30 de ore cu mentorul, împărțite pe maximum 6 luni. Programul este stabilit de comun acord împreună cu mentorul.",
           },
           {
-            q: "Care este implicarea săptămânală necesară?",
-            a: "Implicarea individuală, pe lângă sesiunile cu mentorul, este de aproximativ 30 de ore pe săptămână.",
+            q: "Trebuie să am cunoștințe de programare înainte?",
+            a: "Ai nevoie doar de bazele informaticii (ce ai învățat în liceu, facultate sau alte cursuri în domeniu). Restul îl înveți la noi, pas cu pas.\n\nO cerință obligatorie pentru interviu este să citești cartea 1 din [seria \"You Don't Know JS\" de Kyle Simpson](https://github.com/getify/You-Dont-Know-JS/tree/1st-ed).",
           },
           {
-            q: "Am nevoie de experiență anterioară în programare?",
-            a: "Nu este necesară experiența anterioară. Programul este conceput să te ducă de la zero cunoștințe la nivel de junior engineer.",
+            q: "Cum se face selecția cursanților?",
+            a: "Înainte de înscriere ai un scurt interviu online, astfel încât să ne asigurăm că ești motivat și că programul ți se potrivește.",
           },
           {
-            q: "Ce opțiuni de curs sunt disponibile?",
-            a: "Oferim cursuri în grup (cost standard, colaborare între colegi) și cursuri individuale 1-la-1 cu mentorul (program personalizat, cost mai ridicat).",
+            q: "Ce se întâmplă dacă nu mai pot continua cursul?",
+            a: "Plata este lunară. Dacă te retragi, nu mai plătești lunile următoare, dar suma deja achitată nu se returnează.",
           },
           {
-            q: "Ce tehnologii voi învăța?",
-            a: "JavaScript, Git/GitHub, Node.js, API REST, baze de date, HTML/CSS, React, deployment și multe altele necesare pentru dezvoltarea full-stack.",
+            q: "Voi primi un certificat la final?",
+            a: "Da, la absolvirea cursului primești un certificat de absolvire emis de Academia The Forge și o recomandare la cerere.",
           },
           {
-            q: "Cum funcționează procesul de înscriere?",
-            a: "Completezi formularul de înscriere, urmează un interviu individual, apoi primești toate detaliile pentru începerea cursurilor.",
+            q: "Mă ajutați să îmi găsesc un job după curs?",
+            a: "Nu promitem angajare garantată, dar dacă apar oportunități de la companii partenere, te punem în legătură cu ele. În plus, proiectele făcute la curs îți oferă un portofoliu puternic pentru interviuri. Suntem direct interesați de continuarea parcursului tău în IT.",
           },
         ],
       },
@@ -681,10 +682,10 @@ export default function AcademyLanding({
                 {t.faq.items.map((item, i) => (
                   <AccordionItem key={i} value={`item-${i}`}>
                     <AccordionTrigger className={`${headingFont} text-left`}>
-                      {item.q}
+                      <MarkdownText>{item.q}</MarkdownText>
                     </AccordionTrigger>
                     <AccordionContent className="text-muted-foreground">
-                      {item.a}
+                      <MarkdownText>{item.a}</MarkdownText>
                     </AccordionContent>
                   </AccordionItem>
                 ))}
