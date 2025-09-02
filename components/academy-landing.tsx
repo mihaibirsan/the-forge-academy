@@ -93,7 +93,7 @@ export default function AcademyLanding({
         beginner: { en: "Beginner friendly", ro: "Potrivit pentru începători" },
         languageToggle: { en: "RO", ro: "EN" },
         missionValues: { en: "Mission & Values", ro: "Misiune & Valori" },
-        realMentors: { en: "Real mentors", ro: "Mentori reali" },
+        realMentors: { en: "Real mentor", ro: "Mentor real" },
         weeklySupport: { en: "Weekly 1:1 support", ro: "Suport 1:1 săptămânal" },
         curriculumOverview: { en: "Curriculum Overview", ro: "Prezentare Curriculum" },
         testimonials: { en: "Testimonials", ro: "Testimoniale" },
@@ -503,8 +503,8 @@ export default function AcademyLanding({
                   <div className="rounded-xl bg-[#FEE07A] px-4 py-3 shadow-md">
                     <div className="flex items-center gap-3">
                       <Avatar>
-                        <AvatarImage src="/mentor-portrait.png" alt="Mentor" />
-                        <AvatarFallback>MN</AvatarFallback>
+                        <AvatarImage src="/dan-andrei-diac-profile.jpg" alt="Dan Andrei Diac (mentor)" />
+                        <AvatarFallback>AD</AvatarFallback>
                       </Avatar>
                       <div>
                         <p className="text-sm font-semibold">
