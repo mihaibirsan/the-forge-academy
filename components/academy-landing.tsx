@@ -77,7 +77,7 @@ export default function AcademyLanding({
       nav: {
         about: { en: "About", ro: "Despre" },
         program: { en: "Program", ro: "Program" },
-        success: { en: "Success Stories", ro: "Povești de succes" },
+        success: { en: "Testimonials", ro: "Testimoniale" },
         pricing: { en: "Pricing", ro: "Prețuri" },
         faq: { en: "FAQ", ro: "Întrebări frecvente" },
         apply: { en: "Apply", ro: "Înscriere" },
@@ -184,8 +184,8 @@ export default function AcademyLanding({
         ],
       },
       success: {
-        heading: "Your Success is Our Goal",
-        sub: "We believe in every student's potential. As long as you're willing to work and actively engage, we'll help you achieve your goals.",
+        heading: "How Others Experienced the Academy",
+        sub: "At The Forge Academy, the best evidence is not our promises, but the stories of those who have gone through the course. Each testimonial is a piece of a student's journey who changed their future through hard work and dedication.",
       },
       faq: {
         heading: "Frequently Asked Questions",
@@ -327,8 +327,8 @@ export default function AcademyLanding({
         ],
       },
       success: {
-        heading: "Succesul tău este ținta noastră",
-        sub: "Credem în potențialul fiecărui student. Atâta timp cât ești dispus să muncești și să te implici activ, te vom ajuta să îți atingi obiectivele.",
+        heading: "Cum au trăit alții experiența academiei",
+        sub: "La The Forge Academy, cele mai bune dovezi nu sunt promisiunile noastre, ci poveștile celor care au trecut prin curs. Fiecare testimonial e o bucată din drumul unui cursant care și-a schimbat viitorul prin muncă și dedicare.",
       },
       faq: {
         heading: "Întrebări frecvente",
@@ -689,30 +689,30 @@ export default function AcademyLanding({
             <div className="mt-10 grid md:grid-cols-3 gap-6">
               {[
                 {
-                  name: "Alex M.",
-                  role: locale === "en" ? "Junior Frontend Engineer" : "Junior Frontend Engineer",
+                  name: "Tania P.",
+                  role: locale === "en" ? "JS Full Stack Developer" : "JS Full Stack Developer",
                   quote:
                     locale === "en"
-                      ? "I started with zero coding experience. The projects and mentorship gave me the confidence to ship features at my new job."
-                      : "Am pornit de la zero. Proiectele și mentoratul mi-au dat încrederea să livrez funcționalități la noul job.",
+                      ? "The six months of study were intense and comprehensive, covering a wide range of knowledge. By the end of the academy, I was well-prepared enough to get hired as a Junior JS Full Stack Developer and start working on a real project."
+                      : "Cele șase luni de studiu au fost intense și complexe, acoperind o gamă largă de cunoștințe. La finalul academiei, eram suficient de pregătită încât am putut să mă angajez ca Junior JS Full Stack Developer și să încep să lucrez pe un proiect real.",
                   imgQuery: "young%20developer%20portrait",
                 },
                 {
-                  name: "Bianca I.",
+                  name: "Cosmin S.",
                   role: locale === "en" ? "Software Engineer" : "Software Engineer",
                   quote:
                     locale === "en"
-                      ? "Clear roadmap, supportive community, and practical learning. I landed interviews within months."
-                      : "O hartă clară, comunitate suportivă și învățare practică. Am obținut interviuri în câteva luni.",
+                      ? "The greatest value I received from Andrei goes beyond the technical aspects. He taught me how to think like a software engineer: how to structure an application, how to write clean and scalable code, how to solve problems in an organized way, and how to approach projects with a professional mindset."
+                      : "Cea mai mare valoare pe care am primit-o de la Andrei nu se rezumă la partea tehnică. El m-a învățat cum să gândesc ca un software engineer: cum să structurez o aplicație, cum să scriu cod curat și scalabil, cum să rezolv probleme într-un mod organizat și cum să abordez proiectele cu o mentalitate profesionistă.",
                   imgQuery: "software%20engineer%20portrait",
                 },
                 {
-                  name: "Dan P.",
+                  name: "Andra D.",
                   role: locale === "en" ? "Full-Stack Developer" : "Full-Stack Developer",
                   quote:
                     locale === "en"
-                      ? "The team-based approach simulates real-world work. It made the transition into my role much smoother."
-                      : "Abordarea de lucru în echipă simulează realitatea. Tranziția în rol a fost mult mai lină.",
+                      ? "As our group mentor, he provided us with a clear study framework, relevant resources, and guided us in his specific style, with balance and efficiency. He constantly encouraged us to work autonomously and was always available to clarify misunderstandings."
+                      : "Ca mentor al grupului nostru, ne-a oferit un cadru de studiu clar, resurse relevante și ne-a ghidat în stilul său specific, cu echilibru și eficiență. Ne-a încurajat constant să lucrăm autonom și a fost mereu disponibil pentru a clarifica neînțelegeri.",
                   imgQuery: "full%20stack%20developer%20portrait",
                 },
               ].map((tst, i) => (
