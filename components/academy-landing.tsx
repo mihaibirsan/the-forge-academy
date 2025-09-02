@@ -38,12 +38,12 @@ type Props = {
 // Component to render markdown text with custom styling
 const MarkdownText = ({ children, inline = false, className = "" }: { children: string; inline?: boolean; className?: string }) => {
   const components: Components = {
-        p: ({ children }) => <p className="mb-3 last:mb-0">{children}</p>,
-        strong: ({ children }) => <strong className="font-semibold text-inherit">{children}</strong>,
-        em: ({ children }) => <em className="italic">{children}</em>,
-        ul: ({ children }) => <ul className="list-disc pl-4 space-y-1">{children}</ul>,
-        ol: ({ children }) => <ol className="list-decimal pl-4 space-y-1">{children}</ol>,
-        li: ({ children }) => <li>{children}</li>,
+    p: ({ children }) => <p className="mb-3 last:mb-0">{children}</p>,
+    strong: ({ children }) => <strong className="font-semibold text-inherit">{children}</strong>,
+    em: ({ children }) => <em className="italic">{children}</em>,
+    ul: ({ children }) => <ul className="list-disc pl-4 space-y-1">{children}</ul>,
+    ol: ({ children }) => <ol className="list-decimal pl-4 space-y-1">{children}</ol>,
+    li: ({ children }) => <li>{children}</li>,
   };
 
   if (inline) {
@@ -91,6 +91,17 @@ export default function AcademyLanding({
         duration: { en: "30 hrs/week", ro: "30 ore/săpt" },
         proven: { en: "Proven results", ro: "Rezultate dovedite" },
         beginner: { en: "Beginner friendly", ro: "Potrivit pentru începători" },
+        languageToggle: { en: "RO", ro: "EN" },
+        missionValues: { en: "Mission & Values", ro: "Misiune & Valori" },
+        realMentors: { en: "Real mentors", ro: "Mentori reali" },
+        weeklySupport: { en: "Weekly 1:1 support", ro: "Suport 1:1 săptămânal" },
+        curriculumOverview: { en: "Curriculum Overview", ro: "Prezentare Curriculum" },
+        testimonials: { en: "Testimonials", ro: "Testimoniale" },
+        limitedSpots: { en: "Limited spots", ro: "Locuri limitate" },
+      },
+      images: {
+        mentorGuiding: { en: "Mentor guiding a student", ro: "Mentor ghidând un student" },
+        studentCoding: { en: "Student coding confidently", ro: "Student care codează cu încredere" },
       },
       footer: {
         rights: {
@@ -334,7 +345,7 @@ export default function AcademyLanding({
                   onClick={() => setLocale(locale === "en" ? "ro" : "en")}
                   aria-label="Toggle language"
                 >
-                  {locale === "en" ? "RO" : "EN"}
+                  {t.common.labels.languageToggle[locale]}
                 </Button>
               </div>
             </nav>
@@ -375,7 +386,7 @@ export default function AcademyLanding({
                     onClick={() => setLocale(locale === "en" ? "ro" : "en")}
                     aria-label="Toggle language"
                   >
-                    {locale === "en" ? "RO" : "EN"}
+                    {t.common.labels.languageToggle[locale]}
                   </Button>
                 </div>
               </div>
@@ -406,9 +417,9 @@ export default function AcademyLanding({
               <h1 className={`${headingFont} mt-6 text-4xl sm:text-5xl font-extrabold`}>
                 {t.hero.title}
               </h1>
-              <p className="mt-4 text-lg sm:text-xl text-white/90">
-                {t.hero.subtitle}
-              </p>
+              <div className="mt-4 text-lg sm:text-xl text-white/90">
+                <MarkdownText className="prose-invert">{t.hero.subtitle}</MarkdownText>
+              </div>
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <Badge className="bg-white/10 hover:bg-white/20 text-white border-white/20">
                   <Clock className="h-3.5 w-3.5 mr-1.5" />
@@ -448,7 +459,7 @@ export default function AcademyLanding({
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full bg-[#FEE07A] px-3 py-1 text-xs font-semibold text-[#212429]">
                   <GraduationCap className="h-3.5 w-3.5" />
-                  {locale === "en" ? "Mission & Values" : "Misiune & Valori"}
+                  {t.common.labels.missionValues[locale]}
                 </div>
                 <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>
                   {t.about.heading}
@@ -483,7 +494,7 @@ export default function AcademyLanding({
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-2xl ring-1 ring-black/5">
                   <Image
                     src="/mentor-student-pair-programming-ro.png"
-                    alt={locale === "en" ? "Mentor guiding a student" : "Mentor ghidând un student"}
+                    alt={t.common.images.mentorGuiding[locale]}
                     fill
                     className="object-cover"
                   />
@@ -497,10 +508,10 @@ export default function AcademyLanding({
                       </Avatar>
                       <div>
                         <p className="text-sm font-semibold">
-                          {locale === "en" ? "Real mentors" : "Mentori reali"}
+                          {t.common.labels.realMentors[locale]}
                         </p>
                         <p className="text-xs text-[#212429]/70">
-                          {locale === "en" ? "Weekly 1:1 support" : "Suport 1:1 săptămânal"}
+                          {t.common.labels.weeklySupport[locale]}
                         </p>
                       </div>
                     </div>
@@ -517,14 +528,14 @@ export default function AcademyLanding({
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#6246EA]/10 text-[#6246EA] px-3 py-1 text-xs font-semibold">
                 <Rocket className="h-3.5 w-3.5" />
-                {locale === "en" ? "Curriculum Overview" : "Prezentare Curriculum"}
+                {t.common.labels.curriculumOverview[locale]}
               </div>
               <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>
                 {t.program.heading}
               </h2>
-              <p className="mt-4 text-muted-foreground">
-                {t.program.sub}
-              </p>
+              <div className="mt-4 text-muted-foreground">
+                <MarkdownText>{t.program.sub}</MarkdownText>
+              </div>
             </div>
 
             <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -539,7 +550,7 @@ export default function AcademyLanding({
                     </div>
                     <CardTitle className={`${headingFont} text-lg mt-3`}>{step.title}</CardTitle>
                     <CardDescription className="text-sm">
-                      {step.desc}
+                      <MarkdownText>{step.desc}</MarkdownText>
                     </CardDescription>
                   </CardHeader>
                   <CardFooter className="pt-0">
@@ -560,12 +571,14 @@ export default function AcademyLanding({
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#6246EA]/10 text-[#6246EA] px-3 py-1 text-xs font-semibold">
                 <Star className="h-3.5 w-3.5" />
-                {locale === "en" ? "Testimonials" : "Testimoniale"}
+                {t.common.labels.testimonials[locale]}
               </div>
               <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>
                 {t.success.heading}
               </h2>
-              <p className="mt-4 text-muted-foreground">{t.success.sub}</p>
+              <div className="mt-4 text-muted-foreground">
+                <MarkdownText>{t.success.sub}</MarkdownText>
+              </div>
             </div>
 
             <div className="mt-10 grid md:grid-cols-3 gap-6">
@@ -678,7 +691,7 @@ export default function AcademyLanding({
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/20">
                   <Image
                     src="/confident-coding-student-ro.png"
-                    alt={locale === "en" ? "Student coding confidently" : "Student care codează cu încredere"}
+                    alt={t.common.images.studentCoding[locale]}
                     fill
                     className="object-cover"
                   />
@@ -688,7 +701,7 @@ export default function AcademyLanding({
                     <div className="flex items-center gap-2 text-[#212429]">
                       <CheckCircle2 className="h-4 w-4" />
                       <span className="text-xs font-semibold">
-                        {locale === "en" ? "Limited spots" : "Locuri limitate"}
+                        {t.common.labels.limitedSpots[locale]}
                       </span>
                     </div>
                   </div>
