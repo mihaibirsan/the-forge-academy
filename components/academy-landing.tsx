@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { GraduationCap, Rocket, Clock, CheckCircle2, Code2, Users2, Briefcase, Star, Globe, Menu, X } from 'lucide-react'
+import { GraduationCap, Rocket, Clock, CheckCircle2, Code2, Users2, Briefcase, Star, Globe, Menu, X, GitBranch, Database, Monitor, Cloud, Brain } from 'lucide-react'
 
 type Locale = "en" | "ro"
 
@@ -135,32 +135,49 @@ export default function AcademyLanding({
       },
       program: {
         heading: "Complete Curriculum",
-        sub:
-          "A structured program that takes you from beginner to full-stack developer ready for real software teams.",
+        sub: "Not just a list of technologies, but a step-by-step path - from the basics of programming to the moment when you can build your own full-stack application.",
         items: [
           {
-            title: "JavaScript & Git",
+            title: "JavaScript Fundamentals",
             desc:
-              "JavaScript fundamentals, version control with Git and GitHub, algorithmic thinking and problem solving.",
+              "You start with programming basics and learn how to write code in JavaScript.",
             icon: Code2,
+          },
+          {
+            title: "Version Control with Git and GitHub",
+            desc:
+              "You discover how to save your work, collaborate, and manage projects like a professional.",
+            icon: GitBranch,
           },
           {
             title: "Back-End Development",
             desc:
-              "Node.js, REST APIs, HTTP routes, middleware, authentication and authorization for secure applications.",
+              "You build the \"invisible\" part of applications: servers, APIs, and the logic behind functionalities.",
             icon: Rocket,
           },
           {
-            title: "Databases & Front-End",
+            title: "Databases – Storage and Querying",
             desc:
-              "Data storage and querying, HTML & CSS, React for interactive and responsive interfaces.",
-            icon: Users2,
+              "You learn how to create, organize, and extract information from databases.",
+            icon: Database,
           },
           {
-            title: "Deployment & Analytical Thinking",
+            title: "Front-End Web Development",
             desc:
-              "Launching applications to production and developing critical thinking oriented towards solutions.",
-            icon: Briefcase,
+              "You create modern and interactive interfaces with HTML, CSS, and React, exactly what users see.",
+            icon: Monitor,
+          },
+          {
+            title: "Complete Application Deployment",
+            desc:
+              "You learn how to publish your application online and keep it functional for users.",
+            icon: Cloud,
+          },
+          {
+            title: "Analytical and Solution-Oriented Thinking",
+            desc:
+              "You train your approach to tackling problems and finding quick and efficient solutions.",
+            icon: Brain,
           },
         ],
       },
@@ -227,31 +244,49 @@ export default function AcademyLanding({
       },
       program: {
         heading: "Curriculum complet",
-        sub: "Un program structurat care te duce de la începător la dezvoltator full-stack pregătit pentru echipele reale de software.",
+        sub: "Nu e doar o înșiruire de tehnologii, ci un traseu gândit pas cu pas – de la bazele programării, până la momentul în care poți construi propria aplicație full-stack.",
         items: [
           {
-            title: "JavaScript & Git",
+            title: "Fundamentele JavaScript",
             desc:
-              "Fundamentele JavaScript, controlul versiunilor cu Git și GitHub, gândire algoritmică și rezolvarea problemelor.",
+              "Începi cu bazele programării și înveți cum să scrii cod în JavaScript.",
             icon: Code2,
           },
           {
-            title: "Back-End Development",
+            title: "Controlul versiunilor cu Git și GitHub",
             desc:
-              "Node.js, API REST, rute HTTP, middleware, autentificare și autorizare pentru aplicații sigure.",
+              "Descoperi cum să îți salvezi munca, să colaborezi și să gestionezi proiecte ca un profesionist.",
+            icon: GitBranch,
+          },
+          {
+            title: "Dezvoltare Back-End",
+            desc:
+              "Construiești partea \"invizibilă\" a aplicațiilor: servere, API-uri și logica din spatele funcționalităților.",
             icon: Rocket,
           },
           {
-            title: "Baze de Date & Front-End",
+            title: "Baze de date – stocare și interogare",
             desc:
-              "Stocare și interogare date, HTML & CSS, React pentru interfețe interactive și responsive.",
-            icon: Users2,
+              "Înveți cum să creezi, să organizezi și să extragi informații din baze de date.",
+            icon: Database,
           },
           {
-            title: "Deployment & Gândire Analitică",
+            title: "Dezvoltare Web Front-End",
             desc:
-              "Lansarea aplicațiilor în producție și dezvoltarea gândirii critice orientate spre soluții.",
-            icon: Briefcase,
+              "Creezi interfețe moderne și interactive cu HTML, CSS și React, exact ce văd utilizatorii.",
+            icon: Monitor,
+          },
+          {
+            title: "Deployment-ul aplicației complete",
+            desc:
+              "Afli cum să publici aplicația online și să o menții funcțională pentru utilizatori.",
+            icon: Cloud,
+          },
+          {
+            title: "Gândire analitică și orientată spre soluții",
+            desc:
+              "Îți antrenezi modul de a aborda problemele și de a găsi soluții rapide și eficiente.",
+            icon: Brain,
           },
         ],
       },
@@ -553,12 +588,6 @@ export default function AcademyLanding({
                       <MarkdownText>{step.desc}</MarkdownText>
                     </CardDescription>
                   </CardHeader>
-                  <CardFooter className="pt-0">
-                    <Badge variant="outline" className="text-[#3F8CEB] border-[#3F8CEB]">
-                      <Clock className="h-3.5 w-3.5 mr-1" />
-                      {t.common.labels.duration[locale]}
-                    </Badge>
-                  </CardFooter>
                 </Card>
               ))}
             </div>
