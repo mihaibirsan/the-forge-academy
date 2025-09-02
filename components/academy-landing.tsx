@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { GraduationCap, Rocket, Clock, CheckCircle2, Code2, Users2, Briefcase, Star, Globe, Menu, X, GitBranch, Database, Monitor, Cloud, Brain } from 'lucide-react'
+import { GraduationCap, Rocket, Clock, CheckCircle2, Code2, Users2, Briefcase, Star, Globe, Menu, X, GitBranch, Database, Monitor, Cloud, Brain, DollarSign } from 'lucide-react'
 
 type Locale = "en" | "ro"
 
@@ -78,6 +78,7 @@ export default function AcademyLanding({
         about: { en: "About", ro: "Despre" },
         program: { en: "Program", ro: "Program" },
         success: { en: "Success Stories", ro: "Povești de succes" },
+        pricing: { en: "Pricing", ro: "Prețuri" },
         faq: { en: "FAQ", ro: "Întrebări frecvente" },
         apply: { en: "Apply", ro: "Înscriere" },
       },
@@ -215,6 +216,40 @@ export default function AcademyLanding({
           },
         ],
       },
+      pricing: {
+        heading: "Pricing & Benefits",
+        sub: "Choose the learning format that works best for you.",
+        recommended: "Recommended",
+        group: {
+          title: "Group Course",
+          duration: "Duration: 3 months",
+          totalPrice: "Total price: 4,500 lei",
+          payment: "Payment: in 3 equal installments of 1,500 lei/month",
+          conditions: "Conditions:",
+          conditionsList: [
+            "payment is due within 5 days of invoice issuance",
+            "if you decide to withdraw, you don't pay for future months, but the amount paid is not refunded"
+          ],
+          bonus: "Bonus: upon successful graduation, you receive back 10% of the total amount paid"
+        },
+        oneOnOne: {
+          title: "1-on-1 Course (personalized)",
+          duration: "Duration: maximum 6 months",
+          totalPrice: "Total price: 7,500 lei",
+          payment: "Payment: in 3 equal installments of 2,500 lei/10 hours of mentoring",
+          conditions: "Conditions:",
+          conditionsList: [
+            "payment is due within 5 days of invoice issuance",
+            "if you decide to withdraw, you don't pay for future hours, but the amount paid is not refunded"
+          ],
+          extras: "What you get extra:",
+          extrasList: [
+            "flexible schedule, set directly with the mentor",
+            "exclusive 1-on-1 attention, but without the team collaboration part"
+          ],
+          bonus: "Bonus: upon successful graduation, you receive back 10% of the total amount paid"
+        }
+      },
       finalCta: {
         heading: "Ready to Change Your Career?",
         sub:
@@ -324,6 +359,40 @@ export default function AcademyLanding({
           },
         ],
       },
+      pricing: {
+        heading: "Prețuri și beneficii",
+        sub: "Alege formatul de învățare care ți se potrivește cel mai bine.",
+        recommended: "Recomandat",
+        group: {
+          title: "Curs de grup",
+          duration: "Durată: 3 luni",
+          totalPrice: "Preț total: 4.500 lei",
+          payment: "Plată: în 3 rate egale, câte 1.500 lei/lună",
+          conditions: "Condiții:",
+          conditionsList: [
+            "plata se face in 5 zile de la emiterea facturii",
+            "dacă decizi să te retragi, nu mai plătești lunile viitoare, dar suma achitată nu se restituie"
+          ],
+          bonus: "Bonus: la absolvirea cu succes, primești înapoi 10% din suma totală plătită"
+        },
+        oneOnOne: {
+          title: "Curs 1-la-1 (personalizat)",
+          duration: "Durată: maxim 6 luni",
+          totalPrice: "Preț total: 7.500 lei",
+          payment: "Plată: în 3 rate egale, câte 2.500 lei/10 ore mentorat",
+          conditions: "Condiții:",
+          conditionsList: [
+            "plata se face in 5 zile de la emiterea facturii",
+            "dacă decizi să te retragi, nu mai plătești orele viitoare, dar suma achitată nu se restituie"
+          ],
+          extras: "Ce primești în plus:",
+          extrasList: [
+            "program flexibil, stabilit direct cu mentorul",
+            "atenție exclusivă 1-la-1, dar fără partea de lucru în echipă"
+          ],
+          bonus: "Bonus: la absolvirea cu succes, primești înapoi 10% din suma totală plătită"
+        }
+      },
       finalCta: {
         heading: "Pregătit să îți schimbi cariera?",
         sub:
@@ -363,6 +432,9 @@ export default function AcademyLanding({
               </button>
               <button className="text-sm hover:text-[#6246EA] transition-colors" onClick={() => scrollTo("success")}>
                 {t.common.nav.success[locale]}
+              </button>
+              <button className="text-sm hover:text-[#6246EA] transition-colors" onClick={() => scrollTo("pricing")}>
+                {t.common.nav.pricing[locale]}
               </button>
               <button className="text-sm hover:text-[#6246EA] transition-colors" onClick={() => scrollTo("faq")}>
                 {t.common.nav.faq[locale]}
@@ -406,6 +478,9 @@ export default function AcademyLanding({
                 </Button>
                 <Button variant="ghost" className="justify-start" onClick={() => scrollTo("success")}>
                   {t.common.nav.success[locale]}
+                </Button>
+                <Button variant="ghost" className="justify-start" onClick={() => scrollTo("pricing")}>
+                  {t.common.nav.pricing[locale]}
                 </Button>
                 <Button variant="ghost" className="justify-start" onClick={() => scrollTo("faq")}>
                   {t.common.nav.faq[locale]}
@@ -669,6 +744,107 @@ export default function AcademyLanding({
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing */}
+        <section id="pricing">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#6246EA]/10 text-[#6246EA] px-3 py-1 text-xs font-semibold">
+                <DollarSign className="h-3.5 w-3.5" />
+                {t.pricing.heading}
+              </div>
+              <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>
+                {t.pricing.heading}
+              </h2>
+              <div className="mt-4 text-muted-foreground">
+                <MarkdownText>{t.pricing.sub}</MarkdownText>
+              </div>
+            </div>
+
+            <div className="mt-10 grid md:grid-cols-2 gap-6">
+              {/* Group Course */}
+              <Card className="border-[#EDEDED] relative">
+                <div className="absolute -top-3 left-6">
+                  <Badge className="bg-[#6246EA] text-white hover:bg-[#6246EA]/90">
+                    {t.pricing.recommended}
+                  </Badge>
+                </div>
+                <CardHeader>
+                  <CardTitle className={`${headingFont} text-xl`}>
+                    {t.pricing.group.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-2">
+                    <p className="font-semibold">{t.pricing.group.duration}</p>
+                    <p className="font-semibold text-lg text-[#6246EA]">{t.pricing.group.totalPrice}</p>
+                    <p className="font-semibold">{t.pricing.group.payment}</p>
+                  </div>
+                  
+                  <div>
+                    <p className="font-semibold mb-2">{t.pricing.group.conditions}</p>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {t.pricing.group.conditionsList.map((condition, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="text-[#6246EA] mt-1">•</span>
+                          {condition}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-4 border-t">
+                    <p className="font-semibold text-green-600">{t.pricing.group.bonus}</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* One-on-One Course */}
+              <Card className="border-[#EDEDED]">
+                <CardHeader>
+                  <CardTitle className={`${headingFont} text-xl`}>
+                    {t.pricing.oneOnOne.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-2">
+                    <p className="font-semibold">{t.pricing.oneOnOne.duration}</p>
+                    <p className="font-semibold text-lg text-[#6246EA]">{t.pricing.oneOnOne.totalPrice}</p>
+                    <p className="font-semibold">{t.pricing.oneOnOne.payment}</p>
+                  </div>
+                  
+                  <div>
+                    <p className="font-semibold mb-2">{t.pricing.oneOnOne.conditions}</p>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {t.pricing.oneOnOne.conditionsList.map((condition, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="text-[#6246EA] mt-1">•</span>
+                          {condition}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p className="font-semibold mb-2">{t.pricing.oneOnOne.extras}</p>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {t.pricing.oneOnOne.extrasList.map((extra, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                          {extra}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-4 border-t">
+                    <p className="font-semibold text-green-600">{t.pricing.oneOnOne.bonus}</p>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
