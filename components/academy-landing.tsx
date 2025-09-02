@@ -85,13 +85,12 @@ export default function AcademyLanding({
       about: {
         heading: "About Academia The Forge",
         body:
-          "Academia The Forge offers an intensive full-stack web course aimed at developing necessary skills, creating end-to-end web applications – from browser interface to database – while developing analytical thinking and solution-oriented approach.",
-        offersHeading: "What You'll Learn",
+          "At **The Forge Academy** you'll find an intensive program, with limited spots, where each student receives real attention and direct feedback.\n\nYou work on practical projects, in a motivated community, guided step by step by a mentor with 20 years of experience. **We believe that if you actively engage in this program you will benefit from:**",
         offers: [
-          "JavaScript Fundamentals - syntax, data types, control structures and algorithmic thinking",
-          "Version control with Git and GitHub for efficient team collaboration",
-          "Back-End Development with Node.js and creating robust web servers",
-          "REST APIs and HTTP routes for front-end to back-end communication",
+          "**A portfolio of projects** - built end-to-end, that you can showcase in interviews",
+          "**Solid technical skills** - JavaScript, React, Node.js, databases and deployment, all applied practically",
+          "**A solution-oriented mindset** - you learn to approach complex problems and find solutions like a real developer",
+          "**Confidence and discipline** - not only do you know how to write code, but you know you can deliver in a real work environment",
         ],
       },
       program: {
@@ -178,13 +177,12 @@ export default function AcademyLanding({
       about: {
         heading: "Despre Academia The Forge",
         body:
-          "Academia The Forge oferă un curs intensiv de web full-stack, care are ca scop dezvoltarea competențelor necesare, crearea unei aplicații web cap-coadă – de la interfața din browser până la baza de date – și îți va dezvolta totodată gândirea analitică și orientarea spre soluții.",
-        offersHeading: "Ce vei învăța",
+          "La **The Forge Academy** găsești un program intensiv, cu locuri limitate, unde fiecare cursant primește atenție reală și feedback direct.\n\nLucrezi la proiecte practice, într-o comunitate motivată, ghidat pas cu pas de un mentor cu 20 de ani experiență. **Credem că dacă te implici activ în acest program vei beneficia de:**",
         offers: [
-          "Fundamentele JavaScript - sintaxa, tipurile de date, structurile de control și gândirea algoritmică",
-          "Controlul versiunilor cu Git și GitHub pentru colaborare eficientă în echipă",
-          "Dezvoltare Back-End cu Node.js și crearea de servere web robuste",
-          "API REST și rute HTTP pentru comunicarea front-end cu back-end-ul",
+          "**Un portofoliu de proiecte** - construite cap-coadă, pe care le poți arăta la interviuri",
+          "**Competențe tehnice solide** - JavaScript, React, Node.js, baze de date și deployment, toate aplicate practic",
+          "**Un mod de gândire orientat spre soluții** - înveți să abordezi probleme complexe și să găsești rezolvări ca un developer adevărat",
+          "**Încredere și disciplină** - nu doar că știi să scrii cod, dar știi că poți livra într-un mediu de lucru real",
         ],
       },
       program: {
