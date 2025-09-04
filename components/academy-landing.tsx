@@ -135,6 +135,33 @@ export default function AcademyLanding({
           "**Confidence and discipline** - not only do you know how to write code, but you know you can deliver in a real work environment",
         ],
       },
+        programDetails: {
+          heading: "How the Academy Works",
+          items: [
+            {
+              title: "Intensive Daily Program",
+              body: "The course takes place in live daily sessions, Monday to Friday, from **08:00 - 10:00** (morning) with the trainer. Additionally, every Saturday you have an extended session, from **09:00 - 13:00**, for practical workshops and in-depth review with the trainer.",
+            },
+            {
+              title: "Individual Study",
+              body: "Besides the hours spent with the trainer, you are expected to invest time in individual learning and practice – up to **30 hours per week** – to deepen concepts and keep up with the fast pace of the course. This extra effort is essential to consolidate your knowledge and reach your full potential.",
+            },
+            {
+              title: "Duration & Periodic Evaluations",
+              body: "The program is structured over approximately 3 months (an intensive bootcamp). At the end of each month, you will have a **progress evaluation**. Based on your results and involvement, the decision to continue the course for the next month will be made together. These periodic evaluations help you become aware of your level and ensure that all students who move forward have acquired the necessary knowledge.",
+            },
+          ],
+          schedule: {
+            heading: "Course Schedule",
+            items: [
+              "Start: 20.10.2025",
+              "October 20 - November 20: course",
+              "November 20 - December 20: course",
+              "December 20 - January 5: holiday",
+              "January 5 - February 5: course",
+            ],
+          },
+        },
       program: {
         heading: "Complete Curriculum",
         sub: "Not just a list of technologies, but a step-by-step path - from the basics of programming to the moment when you can build your own full-stack application.",
@@ -278,6 +305,33 @@ export default function AcademyLanding({
           "**Încredere și disciplină** - nu doar că știi să scrii cod, dar știi că poți livra într-un mediu de lucru real",
         ],
       },
+        programDetails: {
+          heading: "Cum se desfășoară Academia",
+          items: [
+            {
+              title: "Program intensiv zilnic",
+              body: "Cursul are loc în sesiuni live zilnice, de luni până vineri, în intervalul **08:00 - 10:00** (dimineața) alături de trainer. În plus, în fiecare sâmbătă ai o sesiune extinsă, de la **09:00 - 13:00**, pentru ateliere practice și recapitulare aprofundată cu trainerul.",
+            },
+            {
+              title: "Studii individuale",
+              body: "Pe lângă orele petrecute cu trainerul, se așteaptă să investești timp în învățare și practică individuală – până la **30 de ore pe săptămână** – pentru a aprofunda conceptele și a ține pasul cu ritmul alert al cursului. Acest efort suplimentar este esențial pentru a reuși să consolidezi cunoștințele și să îți atingi potențialul maxim.",
+            },
+            {
+              title: "Durata și evaluări periodice",
+              body: "Programul este structurat pe o durată de aproximativ 3 luni (corespunzător unui *bootcamp* intensiv). La fiecare final de lună, vei avea o **evaluare** a progresului. Pe baza rezultatelor și a implicării tale, se va decide de comun acord continuarea cursului în luna următoare. Aceste evaluări periodice te ajută să conștientizezi nivelul atins și asigură că toți cursanții care merg mai departe au acumulat cunoștințele necesare.",
+            },
+          ],
+          schedule: {
+            heading: "Perioada de desfășurare a cursului:",
+            items: [
+              "Start: 20.10.2025",
+              "20 octombrie - 20 noiembrie - curs",
+              "20 noiembrie - 20 decembrie - curs",
+              "20 decembrie - 5 ianuarie - vacanță",
+              "5 ianuarie - 5 februarie - curs",
+            ],
+          },
+        },
       program: {
         heading: "Curriculum complet",
         sub: "Nu e doar o înșiruire de tehnologii, ci un traseu gândit pas cu pas – de la bazele programării, până la momentul în care poți construi propria aplicație full-stack.",
@@ -667,6 +721,30 @@ export default function AcademyLanding({
                 </Card>
               ))}
             </div>
+            {/* Program Details Section */}
+            <section className="mt-16">
+              <div className="max-w-3xl mx-auto">
+                <h3 className={`${headingFont} text-2xl sm:text-3xl font-bold mb-6`}>
+                  {t.programDetails.heading}
+                </h3>
+                <div className="space-y-6">
+                  {t.programDetails.items.map((item, idx) => (
+                    <div key={idx}>
+                      <h4 className="font-semibold text-lg mb-2">{item.title}</h4>
+                      <MarkdownText>{item.body}</MarkdownText>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-8">
+                  <h4 className="font-semibold text-lg mb-2">{t.programDetails.schedule.heading}</h4>
+                  <ul className="list-disc pl-5 space-y-1">
+                    {t.programDetails.schedule.items.map((line, idx) => (
+                      <li key={idx}>{line}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </section>
           </div>
         </section>
 
