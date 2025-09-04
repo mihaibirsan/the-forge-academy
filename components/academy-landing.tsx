@@ -743,21 +743,23 @@ export default function AcademyLanding({
             </div>
 
             <div className="mt-10 space-y-6">
-              {t.programDetails.items.map((item, idx) => (
-                <Card key={idx} className="border-[#EDEDED]">
-                  <CardHeader>
-                    <CardTitle className={`${headingFont} text-lg flex items-center gap-3`}>
+              <div className="grid md:grid-cols-3 gap-6">
+                {t.programDetails.items.map((item, idx) => (
+                  <Card key={idx} className="border-[#EDEDED] h-full flex flex-col">
+                    <CardHeader>
+                      <CardTitle className={`${headingFont} text-lg flex items-center gap-3`}>
                         <div className="h-8 w-8 rounded-lg bg-[#6246EA] flex items-center justify-center">
-                        <span className="text-white font-bold text-sm">{idx + 1}</span>
-                      </div>
-                      {item.title}
-                    </CardTitle>
-                    <CardDescription className="text-sm ml-11">
-                      <MarkdownText>{item.body}</MarkdownText>
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              ))}
+                          <span className="text-white font-bold text-sm">{idx + 1}</span>
+                        </div>
+                        {item.title}
+                      </CardTitle>
+                      <CardDescription className="text-sm ml-11">
+                        <MarkdownText>{item.body}</MarkdownText>
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
+                ))}
+              </div>
 
               <Card className="border-[#EDEDED] bg-gradient-to-r from-[#6246EA]/5 to-[#3F8CEB]/5">
                 <CardHeader>
