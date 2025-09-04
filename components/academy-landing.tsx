@@ -697,6 +697,7 @@ export default function AcademyLanding({
           </div>
         </section>
 
+        {/* Program Structure & Schedule */}
         <section id="schedule" className="bg-[#FAFAFA]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
             <div className="max-w-2xl">
@@ -755,14 +756,203 @@ export default function AcademyLanding({
         <section id="success" className="bg-[#FAFAFA]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
             <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#3F8CEB]/10 text-[#3F8CEB] px-3 py-1 text-xs font-semibold">
+                <CheckCircle2 className="h-3.5 w-3.5" />
+                {t.common.labels.testimonials[locale]}
+              </div>
               <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>{t.success.heading}</h2>
               <div className="mt-4 text-muted-foreground">
                 <MarkdownText>{t.success.sub}</MarkdownText>
               </div>
             </div>
+
+            <div className="mt-10 relative">
+              <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-2xl ring-1 ring-black/5">
+                <Image
+                  src="/student-coding-confidently-ro.png"
+                  alt={t.common.images.studentCoding[locale]}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section id="faq" className="bg-[#FAFAFA]">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 py-16 sm:py-20">
+            <div className="text-center">
+              <h2 className={`${headingFont} text-3xl sm:text-4xl font-bold`}>{t.faq.heading}</h2>
+            </div>
+
+            <div className="mt-10 space-y-4">
+              {t.faq.items.map((item, idx) => (
+                <Card key={idx} className="border-[#EDEDED]">
+                  <CardHeader>
+                    <CardTitle className={`${headingFont} text-lg`}>{item.q}</CardTitle>
+                    <CardDescription className="text-sm">
+                      <MarkdownText>{item.a}</MarkdownText>
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing */}
+        <section id="pricing">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 className={`${headingFont} text-3xl sm:text-4xl font-bold`}>{t.pricing.heading}</h2>
+              <div className="mt-4 text-muted-foreground">
+                <MarkdownText>{t.pricing.sub}</MarkdownText>
+              </div>
+            </div>
+
+            <div className="mt-10 grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* Group Course */}
+              <Card className="border-[#EDEDED] relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <Badge className="bg-[#FEE07A] text-[#212429] hover:bg-[#FEE07A]">{t.pricing.recommended}</Badge>
+                </div>
+                <CardHeader className="text-center pb-4">
+                  <CardTitle className={`${headingFont} text-2xl`}>{t.pricing.group.title}</CardTitle>
+                  <CardDescription className="text-sm">{t.pricing.group.duration}</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold">{t.pricing.group.totalPrice}</div>
+                    <div className="text-sm text-muted-foreground">{t.pricing.group.payment}</div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-sm mb-2">{t.pricing.group.conditions}</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {t.pricing.group.conditionsList.map((condition, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <div className="h-1.5 w-1.5 rounded-full bg-muted-foreground mt-2 shrink-0" />
+                          {condition}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bg-[#FEE07A]/20 rounded-lg p-3">
+                    <p className="text-sm font-medium">{t.pricing.group.bonus}</p>
+                  </div>
+
+                  <Button
+                    className="w-full bg-[#6246EA] hover:bg-[#543fd0]"
+                    onClick={() => (window.location.href = formUrl)}
+                  >
+                    {t.common.cta.primary[locale]}
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* 1-on-1 Course */}
+              <Card className="border-[#EDEDED]">
+                <CardHeader className="text-center pb-4">
+                  <CardTitle className={`${headingFont} text-2xl`}>{t.pricing.oneOnOne.title}</CardTitle>
+                  <CardDescription className="text-sm">{t.pricing.oneOnOne.duration}</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold">{t.pricing.oneOnOne.totalPrice}</div>
+                    <div className="text-sm text-muted-foreground">{t.pricing.oneOnOne.payment}</div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-sm mb-2">{t.pricing.oneOnOne.conditions}</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {t.pricing.oneOnOne.conditionsList.map((condition, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <div className="h-1.5 w-1.5 rounded-full bg-muted-foreground mt-2 shrink-0" />
+                          {condition}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-sm mb-2">{t.pricing.oneOnOne.extras}</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {t.pricing.oneOnOne.extrasList.map((extra, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-[#3F8CEB] mt-0.5 shrink-0" />
+                          {extra}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bg-[#FEE07A]/20 rounded-lg p-3">
+                    <p className="text-sm font-medium">{t.pricing.oneOnOne.bonus}</p>
+                  </div>
+
+                  <Button
+                    variant="outline"
+                    className="w-full bg-transparent"
+                    onClick={() => (window.location.href = formUrl)}
+                  >
+                    {t.common.cta.primary[locale]}
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="bg-[#212429] text-white">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 py-16 sm:py-20 text-center">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold">
+              <CheckCircle2 className="h-3.5 w-3.5" />
+              {t.common.labels.limitedSpots[locale]}
+            </div>
+            <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>{t.finalCta.heading}</h2>
+            <div className="mt-4 text-white/80">
+              <MarkdownText className="prose-invert">{t.finalCta.sub}</MarkdownText>
+            </div>
+            <div className="mt-8">
+              <Button
+                size="lg"
+                className="bg-[#FEE07A] text-[#212429] hover:bg-[#FEE07A]/90"
+                onClick={() => (window.location.href = formUrl)}
+              >
+                {t.finalCta.button}
+              </Button>
+            </div>
           </div>
         </section>
       </main>
+
+      {/* Footer */}
+      <footer className="bg-[#FAFAFA] border-t">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-2">
+              <img
+                src="/the-forge-symbol.png"
+                alt="The Forge Symbol"
+                className="h-5 text-[#6246EA]"
+                aria-hidden="true"
+              />
+              <span className={`font-semibold ${headingFont}`}>Academia The Forge</span>
+            </div>
+            <div className="flex items-center gap-6 text-sm text-muted-foreground">
+              <span>
+                {t.common.footer.contact[locale]}: {t.common.footer.email[locale]}
+              </span>
+            </div>
+          </div>
+          <div className="mt-4 pt-4 border-t text-center text-sm text-muted-foreground">
+            {t.common.footer.rights[locale]}
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
