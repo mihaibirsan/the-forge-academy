@@ -1,30 +1,29 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import { Components } from "react-markdown"
+import type { Components } from "react-markdown"
 import ReactMarkdown from "react-markdown"
 import Link from "next/link"
 import Image from "next/image"
-import {
-  Button,
-} from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardFooter,
-} from "@/components/ui/card"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { GraduationCap, Rocket, Clock, CheckCircle2, Code2, Users2, Briefcase, Star, Globe, Menu, X, GitBranch, Database, Monitor, Cloud, Brain, DollarSign } from 'lucide-react'
+import {
+  GraduationCap,
+  Rocket,
+  Clock,
+  CheckCircle2,
+  Code2,
+  Globe,
+  Menu,
+  X,
+  GitBranch,
+  Database,
+  Monitor,
+  Cloud,
+  Brain,
+} from "lucide-react"
 
 type Locale = "en" | "ro"
 
@@ -36,7 +35,11 @@ type Props = {
 }
 
 // Component to render markdown text with custom styling
-const MarkdownText = ({ children, inline = false, className = "" }: { children: string; inline?: boolean; className?: string }) => {
+const MarkdownText = ({
+  children,
+  inline = false,
+  className = "",
+}: { children: string; inline?: boolean; className?: string }) => {
   const components: Components = {
     p: ({ children }) => <p className="mb-3 last:mb-0">{children}</p>,
     strong: ({ children }) => <strong className="font-semibold text-inherit">{children}</strong>,
@@ -44,23 +47,25 @@ const MarkdownText = ({ children, inline = false, className = "" }: { children: 
     ul: ({ children }) => <ul className="list-disc pl-4 space-y-1">{children}</ul>,
     ol: ({ children }) => <ol className="list-decimal pl-4 space-y-1">{children}</ol>,
     li: ({ children }) => <li>{children}</li>,
-    a: ({ children, href }) => <Link href={href!} className="text-blue-500 hover:underline">{children}</Link>
-  };
+    a: ({ children, href }) => (
+      <Link href={href!} className="text-blue-500 hover:underline">
+        {children}
+      </Link>
+    ),
+  }
 
   if (inline) {
-    return <ReactMarkdown
-      components={components}
-      disallowedElements={['p']}
-      unwrapDisallowed
-    >
-      {children}
-    </ReactMarkdown>
+    return (
+      <ReactMarkdown components={components} disallowedElements={["p"]} unwrapDisallowed>
+        {children}
+      </ReactMarkdown>
+    )
   }
-  return <div className={`prose prose-sm max-w-none ${className}`}>
-    <ReactMarkdown components={components}>
-      {children}
-    </ReactMarkdown>
-  </div>;
+  return (
+    <div className={`prose prose-sm max-w-none ${className}`}>
+      <ReactMarkdown components={components}>{children}</ReactMarkdown>
+    </div>
+  )
 }
 
 export default function AcademyLanding({
@@ -117,8 +122,7 @@ export default function AcademyLanding({
 
     const en = {
       hero: {
-        title:
-          "Transform Your Future in Tech. Become a Full-Stack Web Developer in 3–6 Months!",
+        title: "Transform Your Future in Tech. Become a Full-Stack Web Developer in 3–6 Months!",
         subtitle:
           "There are no shortcuts to becoming a programmer. There is only work, feedback, and real projects. At The Forge Academy, you learn to code, solve problems, and build complete web applications in 3 months. And in the end, you not only have technical skills but also the confidence that you can deliver.",
         highlight: "From zero to full-stack developer",
@@ -126,8 +130,7 @@ export default function AcademyLanding({
       },
       about: {
         heading: "About Academia The Forge",
-        body:
-          "At **The Forge Academy** you'll find an intensive program, with limited spots, where each student receives real attention and direct feedback.\n\nYou work on practical projects, in a motivated community, guided step by step by a mentor with 20 years of experience. **We believe that if you actively engage in this program you will benefit from:**",
+        body: "At **The Forge Academy** you'll find an intensive program, with limited spots, where each student receives real attention and direct feedback.\n\nYou work on practical projects, in a motivated community, guided step by step by a mentor with 20 years of experience. **We believe that if you actively engage in this program you will benefit from:**",
         offers: [
           "**A portfolio of projects** - built end-to-end, that you can showcase in interviews",
           "**Solid technical skills** - JavaScript, React, Node.js, databases and deployment, all applied practically",
@@ -141,47 +144,68 @@ export default function AcademyLanding({
         items: [
           {
             title: "JavaScript Fundamentals",
-            desc:
-              "You start with programming basics and learn how to write code in JavaScript.",
+            desc: "You start with programming basics and learn how to write code in JavaScript.",
             icon: Code2,
           },
           {
             title: "Version Control with Git and GitHub",
-            desc:
-              "You discover how to save your work, collaborate, and manage projects like a professional.",
+            desc: "You discover how to save your work, collaborate, and manage projects like a professional.",
             icon: GitBranch,
           },
           {
             title: "Back-End Development",
-            desc:
-              "You build the \"invisible\" part of applications: servers, APIs, and the logic behind functionalities.",
+            desc: 'You build the "invisible" part of applications: servers, APIs, and the logic behind functionalities.',
             icon: Rocket,
           },
           {
             title: "Databases – Storage and Querying",
-            desc:
-              "You learn how to create, organize, and extract information from databases.",
+            desc: "You learn how to create, organize, and extract information from databases.",
             icon: Database,
           },
           {
             title: "Front-End Web Development",
-            desc:
-              "You create modern and interactive interfaces with HTML, CSS, and React, exactly what users see.",
+            desc: "You create modern and interactive interfaces with HTML, CSS, and React, exactly what users see.",
             icon: Monitor,
           },
           {
             title: "Complete Application Deployment",
-            desc:
-              "You learn how to publish your application online and keep it functional for users.",
+            desc: "You learn how to publish your application online and keep it functional for users.",
             icon: Cloud,
           },
           {
             title: "Analytical and Solution-Oriented Thinking",
-            desc:
-              "You train your approach to tackling problems and finding quick and efficient solutions.",
+            desc: "You train your approach to tackling problems and finding quick and efficient solutions.",
             icon: Brain,
           },
         ],
+      },
+      schedule: {
+        heading: "Program Structure & Schedule",
+        sub: "A comprehensive overview of the intensive learning format, time commitment, and program timeline.",
+        items: [
+          {
+            title: "Daily Intensive Program",
+            desc: "The course takes place in daily live sessions, Monday to Friday, from **08:00 - 10:00** (morning) with the trainer. Additionally, every Saturday you have an extended session from **09:00 - 13:00** for practical workshops and in-depth review with the trainer.",
+          },
+          {
+            title: "Individual Study",
+            desc: "In addition to time spent with the trainer, you are expected to invest time in individual learning and practice – up to **30 hours per week** – to deepen concepts and keep up with the course's fast pace. This additional effort is essential to successfully consolidate knowledge and reach your maximum potential.",
+          },
+          {
+            title: "Duration and Periodic Evaluations",
+            desc: "The program is structured over approximately 3 months (corresponding to an intensive *bootcamp*). At the end of each month, you will have a **progress evaluation**. Based on the results and your involvement, continuation to the next month will be decided by mutual agreement. These periodic evaluations help you become aware of the level achieved and ensure that all students who continue have accumulated the necessary knowledge.",
+          },
+        ],
+        timeline: {
+          heading: "Course Timeline:",
+          items: [
+            "Start: October 20, 2025",
+            "October 20 - November 20 - course",
+            "November 20 - December 20 - course",
+            "December 20 - January 5 - vacation",
+            "January 5 - February 5 - course",
+          ],
+        },
       },
       success: {
         heading: "How Others Experienced the Academy",
@@ -228,9 +252,9 @@ export default function AcademyLanding({
           conditions: "Conditions:",
           conditionsList: [
             "payment is due within 5 days of invoice issuance",
-            "if you decide to withdraw, you don't pay for future months, but the amount paid is not refunded"
+            "if you decide to withdraw, you don't pay for future months, but the amount paid is not refunded",
           ],
-          bonus: "Bonus: upon successful graduation, you receive back 10% of the total amount paid"
+          bonus: "Bonus: upon successful graduation, you receive back 10% of the total amount paid",
         },
         oneOnOne: {
           title: "1-on-1 Course (personalized)",
@@ -240,28 +264,26 @@ export default function AcademyLanding({
           conditions: "Conditions:",
           conditionsList: [
             "payment is due within 5 days of invoice issuance",
-            "if you decide to withdraw, you don't pay for future hours, but the amount paid is not refunded"
+            "if you decide to withdraw, you don't pay for future hours, but the amount paid is not refunded",
           ],
           extras: "What you get extra:",
           extrasList: [
             "flexible schedule, set directly with the mentor",
-            "exclusive 1-on-1 attention, but without the team collaboration part"
+            "exclusive 1-on-1 attention, but without the team collaboration part",
           ],
-          bonus: "Bonus: upon successful graduation, you receive back 10% of the total amount paid"
-        }
+          bonus: "Bonus: upon successful graduation, you receive back 10% of the total amount paid",
+        },
       },
       finalCta: {
         heading: "Ready to Change Your Career?",
-        sub:
-          "Academia The Forge believes in every student's potential. If you're willing to work and dedicate the necessary time, we'll help you start your full-stack web developer career on the right foot.",
+        sub: "Academia The Forge believes in every student's potential. If you're willing to work and dedicate the necessary time, we'll help you start your full-stack web developer career on the right foot.",
         button: "Complete the Registration Form",
       },
     }
 
     const ro = {
       hero: {
-        title:
-          "Transformă-ți viitorul în Tech. Devino programator web full-stack în 3–6 luni!",
+        title: "Transformă-ți viitorul în Tech. Devino programator web full-stack în 3–6 luni!",
         subtitle:
           "Nu există scurtături în a deveni programator. Există doar muncă, feedback și proiecte reale. La Academia The Forge, înveți în 3 luni să scrii cod, să rezolvi probleme și să construiești aplicații web complete. Iar la final, nu ai doar skilluri tehnice, ci și încrederea că poți livra.",
         highlight: "De la zero la programator full-stack",
@@ -269,8 +291,7 @@ export default function AcademyLanding({
       },
       about: {
         heading: "Despre Academia The Forge",
-        body:
-          "La **The Forge Academy** găsești un program intensiv, cu locuri limitate, unde fiecare cursant primește atenție reală și feedback direct.\n\nLucrezi la proiecte practice, într-o comunitate motivată, ghidat pas cu pas de un mentor cu 20 de ani experiență. **Credem că dacă te implici activ în acest program vei beneficia de:**",
+        body: "La **The Forge Academy** găsești un program intensiv, cu locuri limitate, unde fiecare cursant primește atenție reală și feedback direct.\n\nLucrezi la proiecte practice, într-o comunitate motivată, ghidat pas cu pas de un mentor cu 20 de ani experiență. **Credem că dacă te implici activ în acest program vei beneficia de:**",
         offers: [
           "**Un portofoliu de proiecte** - construite cap-coadă, pe care le poți arăta la interviuri",
           "**Competențe tehnice solide** - JavaScript, React, Node.js, baze de date și deployment, toate aplicate practic",
@@ -284,47 +305,68 @@ export default function AcademyLanding({
         items: [
           {
             title: "Fundamentele JavaScript",
-            desc:
-              "Începi cu bazele programării și înveți cum să scrii cod în JavaScript.",
+            desc: "Începi cu bazele programării și înveți cum să scrii cod în JavaScript.",
             icon: Code2,
           },
           {
             title: "Controlul versiunilor cu Git și GitHub",
-            desc:
-              "Descoperi cum să îți salvezi munca, să colaborezi și să gestionezi proiecte ca un profesionist.",
+            desc: "Descoperi cum să îți salvezi munca, să colaborezi și să gestionezi proiecte ca un profesionist.",
             icon: GitBranch,
           },
           {
             title: "Dezvoltare Back-End",
-            desc:
-              "Construiești partea \"invizibilă\" a aplicațiilor: servere, API-uri și logica din spatele funcționalităților.",
+            desc: 'Construiești partea "invizibilă" a aplicațiilor: servere, API-uri și logica din spatele funcționalităților.',
             icon: Rocket,
           },
           {
             title: "Baze de date – stocare și interogare",
-            desc:
-              "Înveți cum să creezi, să organizezi și să extragi informații din baze de date.",
+            desc: "Înveți cum să creezi, să organizezi și să extragi informații din baze de date.",
             icon: Database,
           },
           {
             title: "Dezvoltare Web Front-End",
-            desc:
-              "Creezi interfețe moderne și interactive cu HTML, CSS și React, exact ce văd utilizatorii.",
+            desc: "Creezi interfețe moderne și interactive cu HTML, CSS și React, exact ce văd utilizatorii.",
             icon: Monitor,
           },
           {
             title: "Deployment-ul aplicației complete",
-            desc:
-              "Afli cum să publici aplicația online și să o menții funcțională pentru utilizatori.",
+            desc: "Afli cum să publici aplicația online și să o menții funcțională pentru utilizatori.",
             icon: Cloud,
           },
           {
             title: "Gândire analitică și orientată spre soluții",
-            desc:
-              "Îți antrenezi modul de a aborda problemele și de a găsi soluții rapide și eficiente.",
+            desc: "Îți antrenezi modul de a aborda problemele și de a găsi soluții rapide și eficiente.",
             icon: Brain,
           },
         ],
+      },
+      schedule: {
+        heading: "Structura și programul cursului",
+        sub: "O prezentare completă a formatului intensiv de învățare, a timpului necesar și a cronologiei programului.",
+        items: [
+          {
+            title: "Program intensiv zilnic",
+            desc: "Cursul are loc în sesiuni live zilnice, de luni până vineri, în intervalul **08:00 - 10:00** (dimineața) alături de trainer. În plus, în fiecare sâmbătă ai o sesiune extinsă, de la **09:00 - 13:00**, pentru ateliere practice și recapitulare aprofundată cu trainerul.",
+          },
+          {
+            title: "Studii individuale",
+            desc: "Pe lângă orele petrecute cu trainerul, se așteaptă să investești timp în învățare și practică individuală – până la **30 de ore pe săptămână** – pentru a aprofunda conceptele și a ține pasul cu ritmul alert al cursului. Acest efort suplimentar este esențial pentru a reuși să consolidezi cunoștințele și să îți atingi potențialul maxim.",
+          },
+          {
+            title: "Durata și evaluări periodice",
+            desc: "Programul este structurat pe o durată de aproximativ 3 luni (corespunzător unui *bootcamp* intensiv). La fiecare final de lună, vei avea o **evaluare** a progresului. Pe baza rezultatelor și a implicării tale, se va decide de comun acord continuarea cursului în luna următoare. Aceste evaluări periodice te ajută să conștientizezi nivelul atins și asigură că toți cursanții care merg mai departe au acumulat cunoștințele necesare.",
+          },
+        ],
+        timeline: {
+          heading: "Perioada de desfășurare a cursului:",
+          items: [
+            "Start: 20.10.2025",
+            "20 octombrie - 20 noiembrie - curs",
+            "20 noiembrie - 20 decembrie - curs",
+            "20 decembrie - 5 ianuarie - vacanta",
+            "5 ianuarie - 5 februarie - curs",
+          ],
+        },
       },
       success: {
         heading: "Cum au trăit alții experiența academiei",
@@ -339,7 +381,7 @@ export default function AcademyLanding({
           },
           {
             q: "Trebuie să am cunoștințe de programare înainte?",
-            a: "Ai nevoie doar de bazele informaticii (ce ai învățat în liceu, facultate sau alte cursuri în domeniu). Restul îl înveți la noi, pas cu pas.\n\nO cerință obligatorie pentru interviu este să citești cartea 1 din [seria \"You Don't Know JS\" de Kyle Simpson](https://github.com/getify/You-Dont-Know-JS/tree/1st-ed).",
+            a: 'Ai nevoie doar de bazele informaticii (ce ai învățat în liceu, facultate sau alte cursuri în domeniu). Restul îl înveți la noi, pas cu pas.\n\nO cerință obligatorie pentru interviu este să citești cartea 1 din [seria "You Don\'t Know JS" de Kyle Simpson](https://github.com/getify/You-Dont-Know-JS/tree/1st-ed).',
           },
           {
             q: "Cum se face selecția cursanților?",
@@ -371,9 +413,9 @@ export default function AcademyLanding({
           conditions: "Condiții:",
           conditionsList: [
             "plata se face in 5 zile de la emiterea facturii",
-            "dacă decizi să te retragi, nu mai plătești lunile viitoare, dar suma achitată nu se restituie"
+            "dacă decizi să te retragi, nu mai plătești lunile viitoare, dar suma achitată nu se restituie",
           ],
-          bonus: "Bonus: la absolvirea cu succes, primești înapoi 10% din suma totală plătită"
+          bonus: "Bonus: la absolvirea cu succes, primești înapoi 10% din suma totală plătită",
         },
         oneOnOne: {
           title: "Curs 1-la-1 (personalizat)",
@@ -383,20 +425,19 @@ export default function AcademyLanding({
           conditions: "Condiții:",
           conditionsList: [
             "plata se face in 5 zile de la emiterea facturii",
-            "dacă decizi să te retragi, nu mai plătești orele viitoare, dar suma achitată nu se restituie"
+            "dacă decizi să te retragi, nu mai plătești orele viitoare, dar suma achitată nu se restituie",
           ],
           extras: "Ce primești în plus:",
           extrasList: [
             "program flexibil, stabilit direct cu mentorul",
-            "atenție exclusivă 1-la-1, dar fără partea de lucru în echipă"
+            "atenție exclusivă 1-la-1, dar fără partea de lucru în echipă",
           ],
-          bonus: "Bonus: la absolvirea cu succes, primești înapoi 10% din suma totală plătită"
-        }
+          bonus: "Bonus: la absolvirea cu succes, primești înapoi 10% din suma totală plătită",
+        },
       },
       finalCta: {
         heading: "Pregătit să îți schimbi cariera?",
-        sub:
-          "Academia The Forge crede în potențialul fiecărui student. Dacă ești dispus să muncești și să dedicatești timpul necesar, te vom ajuta să pornești cu dreptul în cariera de dezvoltator web full-stack.",
+        sub: "Academia The Forge crede în potențialul fiecărui student. Dacă ești dispus să muncești și să dedicatești timpul necesar, te vom ajuta să pornești cu dreptul în cariera de dezvoltator web full-stack.",
         button: "Completează formularul de înscriere",
       },
     }
@@ -419,7 +460,12 @@ export default function AcademyLanding({
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex h-16 items-center justify-between">
             <Link href="#" className="flex items-center gap-2">
-              <img src="/the-forge-symbol.png" alt="The Forge Symbol" className="h-6 text-[#6246EA]" aria-hidden="true" />
+              <img
+                src="/the-forge-symbol.png"
+                alt="The Forge Symbol"
+                className="h-6 text-[#6246EA]"
+                aria-hidden="true"
+              />
               <span className={`font-semibold ${headingFont}`}>Academia The Forge</span>
             </Link>
 
@@ -439,17 +485,14 @@ export default function AcademyLanding({
               <button className="text-sm hover:text-[#6246EA] transition-colors" onClick={() => scrollTo("faq")}>
                 {t.common.nav.faq[locale]}
               </button>
-              <Button
-                onClick={() => (window.location.href = formUrl)}
-                className="bg-[#6246EA] hover:bg-[#543fd0]"
-              >
+              <Button onClick={() => (window.location.href = formUrl)} className="bg-[#6246EA] hover:bg-[#543fd0]">
                 {t.common.nav.apply[locale]}
               </Button>
               <div className="flex items-center gap-2">
                 <Globe className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                 <Button
                   variant="outline"
-                  className="h-8 px-3"
+                  className="h-8 px-3 bg-transparent"
                   onClick={() => setLocale(locale === "en" ? "ro" : "en")}
                   aria-label="Toggle language"
                 >
@@ -525,9 +568,7 @@ export default function AcademyLanding({
               <span className="inline-block rounded-full bg-[#FEE07A] text-[#212429] px-3 py-1 text-xs font-semibold">
                 {t.common.labels.beginner[locale]}
               </span>
-              <h1 className={`${headingFont} mt-6 text-4xl sm:text-5xl font-extrabold`}>
-                {t.hero.title}
-              </h1>
+              <h1 className={`${headingFont} mt-6 text-4xl sm:text-5xl font-extrabold`}>{t.hero.title}</h1>
               <div className="mt-4 text-lg sm:text-xl text-white/90">
                 <MarkdownText className="prose-invert">{t.hero.subtitle}</MarkdownText>
               </div>
@@ -552,7 +593,7 @@ export default function AcademyLanding({
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white text-black hover:bg-white/10"
+                  className="border-white text-black hover:bg-white/10 bg-transparent"
                   onClick={() => scrollTo("program")}
                 >
                   <Rocket className="h-4 w-4 mr-2" />
@@ -572,9 +613,7 @@ export default function AcademyLanding({
                   <GraduationCap className="h-3.5 w-3.5" />
                   {t.common.labels.missionValues[locale]}
                 </div>
-                <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>
-                  {t.about.heading}
-                </h2>
+                <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>{t.about.heading}</h2>
                 <div className="mt-4 text-muted-foreground">
                   <MarkdownText>{t.about.body}</MarkdownText>
                 </div>
@@ -592,10 +631,7 @@ export default function AcademyLanding({
                   ))}
                 </div>
                 <div className="mt-6">
-                  <Button
-                    onClick={() => (window.location.href = formUrl)}
-                    className="bg-[#6246EA] hover:bg-[#543fd0]"
-                  >
+                  <Button onClick={() => (window.location.href = formUrl)} className="bg-[#6246EA] hover:bg-[#543fd0]">
                     {t.common.cta.alt[locale]}
                   </Button>
                 </div>
@@ -618,12 +654,8 @@ export default function AcademyLanding({
                         <AvatarFallback>AD</AvatarFallback>
                       </Avatar>
                       <div>
-                        <p className="text-sm font-semibold">
-                          {t.common.labels.realMentors[locale]}
-                        </p>
-                        <p className="text-xs text-[#212429]/70">
-                          {t.common.labels.weeklySupport[locale]}
-                        </p>
+                        <p className="text-sm font-semibold">{t.common.labels.realMentors[locale]}</p>
+                        <p className="text-xs text-[#212429]/70">{t.common.labels.weeklySupport[locale]}</p>
                       </div>
                     </div>
                   </div>
@@ -641,9 +673,7 @@ export default function AcademyLanding({
                 <Rocket className="h-3.5 w-3.5" />
                 {t.common.labels.curriculumOverview[locale]}
               </div>
-              <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>
-                {t.program.heading}
-              </h2>
+              <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>{t.program.heading}</h2>
               <div className="mt-4 text-muted-foreground">
                 <MarkdownText>{t.program.sub}</MarkdownText>
               </div>
@@ -651,10 +681,7 @@ export default function AcademyLanding({
 
             <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {t.program.items.map((step, idx) => (
-                <Card
-                  key={idx}
-                  className="border-[#EDEDED] hover:shadow-md transition-shadow"
-                >
+                <Card key={idx} className="border-[#EDEDED] hover:shadow-md transition-shadow">
                   <CardHeader className="pb-2">
                     <div className="h-10 w-10 rounded-lg bg-[#FEE07A] flex items-center justify-center">
                       <step.icon className="h-5 w-5 text-[#212429]" aria-hidden="true" />
@@ -670,269 +697,72 @@ export default function AcademyLanding({
           </div>
         </section>
 
+        <section id="schedule" className="bg-[#FAFAFA]">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#3F8CEB]/10 text-[#3F8CEB] px-3 py-1 text-xs font-semibold">
+                <Clock className="h-3.5 w-3.5" />
+                Program Structure
+              </div>
+              <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>{t.schedule.heading}</h2>
+              <div className="mt-4 text-muted-foreground">
+                <MarkdownText>{t.schedule.sub}</MarkdownText>
+              </div>
+            </div>
+
+            <div className="mt-10 space-y-6">
+              {t.schedule.items.map((item, idx) => (
+                <Card key={idx} className="border-[#EDEDED]">
+                  <CardHeader>
+                    <CardTitle className={`${headingFont} text-lg flex items-center gap-3`}>
+                      <div className="h-8 w-8 rounded-lg bg-[#3F8CEB] flex items-center justify-center">
+                        <span className="text-white font-bold text-sm">{idx + 1}</span>
+                      </div>
+                      {item.title}
+                    </CardTitle>
+                    <CardDescription className="text-sm ml-11">
+                      <MarkdownText>{item.desc}</MarkdownText>
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              ))}
+
+              <Card className="border-[#EDEDED] bg-gradient-to-r from-[#6246EA]/5 to-[#3F8CEB]/5">
+                <CardHeader>
+                  <CardTitle className={`${headingFont} text-lg flex items-center gap-3`}>
+                    <div className="h-8 w-8 rounded-lg bg-[#FEE07A] flex items-center justify-center">
+                      <Clock className="h-4 w-4 text-[#212429]" />
+                    </div>
+                    {t.schedule.timeline.heading}
+                  </CardTitle>
+                  <CardContent className="p-0 ml-11">
+                    <ul className="space-y-2">
+                      {t.schedule.timeline.items.map((item, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-sm">
+                          <div className="h-2 w-2 rounded-full bg-[#6246EA]" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </CardHeader>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Success Stories */}
         <section id="success" className="bg-[#FAFAFA]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#6246EA]/10 text-[#6246EA] px-3 py-1 text-xs font-semibold">
-                <Star className="h-3.5 w-3.5" />
-                {t.common.labels.testimonials[locale]}
-              </div>
-              <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>
-                {t.success.heading}
-              </h2>
+              <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>{t.success.heading}</h2>
               <div className="mt-4 text-muted-foreground">
                 <MarkdownText>{t.success.sub}</MarkdownText>
-              </div>
-            </div>
-
-            <div className="mt-10 grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  name: "Tania P.",
-                  role: locale === "en" ? "JS Full Stack Developer" : "JS Full Stack Developer",
-                  quote:
-                    locale === "en"
-                      ? "The six months of study were intense and comprehensive, covering a wide range of knowledge. By the end of the academy, I was well-prepared enough to get hired as a Junior JS Full Stack Developer and start working on a real project."
-                      : "Cele șase luni de studiu au fost intense și complexe, acoperind o gamă largă de cunoștințe. La finalul academiei, eram suficient de pregătită încât am putut să mă angajez ca Junior JS Full Stack Developer și să încep să lucrez pe un proiect real.",
-                  imgQuery: "young%20developer%20portrait",
-                },
-                {
-                  name: "Cosmin S.",
-                  role: locale === "en" ? "Software Engineer" : "Software Engineer",
-                  quote:
-                    locale === "en"
-                      ? "The greatest value I received from Andrei goes beyond the technical aspects. He taught me how to think like a software engineer: how to structure an application, how to write clean and scalable code, how to solve problems in an organized way, and how to approach projects with a professional mindset."
-                      : "Cea mai mare valoare pe care am primit-o de la Andrei nu se rezumă la partea tehnică. El m-a învățat cum să gândesc ca un software engineer: cum să structurez o aplicație, cum să scriu cod curat și scalabil, cum să rezolv probleme într-un mod organizat și cum să abordez proiectele cu o mentalitate profesionistă.",
-                  imgQuery: "software%20engineer%20portrait",
-                },
-                {
-                  name: "Andra D.",
-                  role: locale === "en" ? "Full-Stack Developer" : "Full-Stack Developer",
-                  quote:
-                    locale === "en"
-                      ? "As our group mentor, he provided us with a clear study framework, relevant resources, and guided us in his specific style, with balance and efficiency. He constantly encouraged us to work autonomously and was always available to clarify misunderstandings."
-                      : "Ca mentor al grupului nostru, ne-a oferit un cadru de studiu clar, resurse relevante și ne-a ghidat în stilul său specific, cu echilibru și eficiență. Ne-a încurajat constant să lucrăm autonom și a fost mereu disponibil pentru a clarifica neînțelegeri.",
-                  imgQuery: "full%20stack%20developer%20portrait",
-                },
-              ].map((tst, i) => (
-                <Card key={i} className="border-[#EDEDED]">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-4">
-                      <Avatar>
-                        <AvatarImage
-                          src={`/abstract-geometric-shapes.png?height=64&width=64&query=${tst.imgQuery}`}
-                          alt={`Portrait of ${tst.name}`}
-                        />
-                        <AvatarFallback>
-                          {tst.name
-                            .split(" ")
-                            .map((s) => s[0])
-                            .join("")
-                            .slice(0, 2)
-                            .toUpperCase()}
-                        </AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className={`${headingFont} font-semibold`}>{tst.name}</p>
-                        <p className="text-sm text-muted-foreground">{tst.role}</p>
-                      </div>
-                    </div>
-                    <p className="mt-4 text-sm">
-                      “{tst.quote}”
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing */}
-        <section id="pricing">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#6246EA]/10 text-[#6246EA] px-3 py-1 text-xs font-semibold">
-                <DollarSign className="h-3.5 w-3.5" />
-                {t.pricing.heading}
-              </div>
-              <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>
-                {t.pricing.heading}
-              </h2>
-              <div className="mt-4 text-muted-foreground">
-                <MarkdownText>{t.pricing.sub}</MarkdownText>
-              </div>
-            </div>
-
-            <div className="mt-10 grid md:grid-cols-2 gap-6">
-              {/* Group Course */}
-              <Card className="border-[#EDEDED] relative">
-                <div className="absolute -top-3 left-6">
-                  <Badge className="bg-[#6246EA] text-white hover:bg-[#6246EA]/90">
-                    {t.pricing.recommended}
-                  </Badge>
-                </div>
-                <CardHeader>
-                  <CardTitle className={`${headingFont} text-xl`}>
-                    {t.pricing.group.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <p className="font-semibold">{t.pricing.group.duration}</p>
-                    <p className="font-semibold text-lg text-[#6246EA]">{t.pricing.group.totalPrice}</p>
-                    <p className="font-semibold">{t.pricing.group.payment}</p>
-                  </div>
-                  
-                  <div>
-                    <p className="font-semibold mb-2">{t.pricing.group.conditions}</p>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      {t.pricing.group.conditionsList.map((condition, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <span className="text-[#6246EA] mt-1">•</span>
-                          {condition}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="pt-4 border-t">
-                    <p className="font-semibold text-green-600">{t.pricing.group.bonus}</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* One-on-One Course */}
-              <Card className="border-[#EDEDED]">
-                <CardHeader>
-                  <CardTitle className={`${headingFont} text-xl`}>
-                    {t.pricing.oneOnOne.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <p className="font-semibold">{t.pricing.oneOnOne.duration}</p>
-                    <p className="font-semibold text-lg text-[#6246EA]">{t.pricing.oneOnOne.totalPrice}</p>
-                    <p className="font-semibold">{t.pricing.oneOnOne.payment}</p>
-                  </div>
-                  
-                  <div>
-                    <p className="font-semibold mb-2">{t.pricing.oneOnOne.conditions}</p>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      {t.pricing.oneOnOne.conditionsList.map((condition, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <span className="text-[#6246EA] mt-1">•</span>
-                          {condition}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <p className="font-semibold mb-2">{t.pricing.oneOnOne.extras}</p>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      {t.pricing.oneOnOne.extrasList.map((extra, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          {extra}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="pt-4 border-t">
-                    <p className="font-semibold text-green-600">{t.pricing.oneOnOne.bonus}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section id="faq">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16 sm:py-20">
-            <h2 className={`${headingFont} text-3xl sm:text-4xl font-bold`}>{t.faq.heading}</h2>
-            <div className="mt-6">
-              <Accordion type="single" collapsible className="w-full">
-                {t.faq.items.map((item, i) => (
-                  <AccordionItem key={i} value={`item-${i}`}>
-                    <AccordionTrigger className={`${headingFont} text-left`}>
-                      <MarkdownText>{item.q}</MarkdownText>
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
-                      <MarkdownText>{item.a}</MarkdownText>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="relative overflow-hidden">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-[#6246EA] to-[#3F8CEB]"
-          />
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20 text-white">
-            <div className="grid lg:grid-cols-[1fr_420px] gap-8 items-center">
-              <div>
-                <h2 className={`${headingFont} text-3xl sm:text-4xl font-bold`}>
-                  {t.finalCta.heading}
-                </h2>
-                <p className="mt-3 text-white/90">{t.finalCta.sub}</p>
-                <div className="mt-6">
-                  <Button
-                    size="lg"
-                    className="bg-white text-[#212429] hover:bg-white/90"
-                    onClick={() => (window.location.href = formUrl)}
-                  >
-                    {t.finalCta.button}
-                  </Button>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/20">
-                  <Image
-                    src="/confident-coding-student-ro.png"
-                    alt={t.common.images.studentCoding[locale]}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-5 -right-5">
-                  <div className="rounded-lg bg-[#FEE07A] px-3 py-2 shadow">
-                    <div className="flex items-center gap-2 text-[#212429]">
-                      <CheckCircle2 className="h-4 w-4" />
-                      <span className="text-xs font-semibold">
-                        {t.common.labels.limitedSpots[locale]}
-                      </span>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="border-t">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-          <p className="text-sm text-muted-foreground">{t.common.footer.rights[locale]}</p>
-          <div className="sm:ml-auto flex items-center gap-3">
-            <span className="text-sm">{t.common.footer.contact[locale]}:</span>
-            <Link
-              href={`mailto:${t.common.footer.email[locale]}`}
-              className="text-sm text-[#3F8CEB] hover:underline"
-            >
-              {t.common.footer.email[locale]}
-            </Link>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
