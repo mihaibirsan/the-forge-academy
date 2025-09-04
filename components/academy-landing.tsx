@@ -135,24 +135,25 @@ export default function AcademyLanding({
           "**Confidence and discipline** - not only do you know how to write code, but you know you can deliver in a real work environment",
         ],
       },
-        programDetails: {
-          heading: "How the Academy Works",
+        schedule: {
+          heading: "Program Structure & Schedule",
+          sub: "How the Academy works: daily live sessions, individual study, and monthly evaluations.",
           items: [
             {
               title: "Intensive Daily Program",
-              body: "The course takes place in live daily sessions, Monday to Friday, from **08:00 - 10:00** (morning) with the trainer. Additionally, every Saturday you have an extended session, from **09:00 - 13:00**, for practical workshops and in-depth review with the trainer.",
+              desc: "The course takes place in live daily sessions, Monday to Friday, from **08:00 - 10:00** (morning) with the trainer. Additionally, every Saturday you have an extended session, from **09:00 - 13:00**, for practical workshops and in-depth review with the trainer.",
             },
             {
               title: "Individual Study",
-              body: "Besides the hours spent with the trainer, you are expected to invest time in individual learning and practice – up to **30 hours per week** – to deepen concepts and keep up with the fast pace of the course. This extra effort is essential to consolidate your knowledge and reach your full potential.",
+              desc: "Besides the hours spent with the trainer, you are expected to invest time in individual learning and practice – up to **30 hours per week** – to deepen concepts and keep up with the fast pace of the course. This extra effort is essential to consolidate your knowledge and reach your full potential.",
             },
             {
               title: "Duration & Periodic Evaluations",
-              body: "The program is structured over approximately 3 months (an intensive bootcamp). At the end of each month, you will have a **progress evaluation**. Based on your results and involvement, the decision to continue the course for the next month will be made together. These periodic evaluations help you become aware of your level and ensure that all students who move forward have acquired the necessary knowledge.",
+              desc: "The program is structured over approximately 3 months (an intensive bootcamp). At the end of each month, you will have a **progress evaluation**. Based on your results and involvement, the decision to continue the course for the next month will be made together. These periodic evaluations help you become aware of your level and ensure that all students who move forward have acquired the necessary knowledge.",
             },
           ],
-          schedule: {
-            heading: "Course Schedule",
+          timeline: {
+            heading: "Course Timeline",
             items: [
               "Start: 20.10.2025",
               "October 20 - November 20: course",
@@ -305,24 +306,25 @@ export default function AcademyLanding({
           "**Încredere și disciplină** - nu doar că știi să scrii cod, dar știi că poți livra într-un mediu de lucru real",
         ],
       },
-        programDetails: {
-          heading: "Cum se desfășoară Academia",
+        schedule: {
+          heading: "Structura programului & calendar",
+          sub: "Cum se desfășoară Academia: sesiuni live zilnice, studiu individual și evaluări lunare.",
           items: [
             {
               title: "Program intensiv zilnic",
-              body: "Cursul are loc în sesiuni live zilnice, de luni până vineri, în intervalul **08:00 - 10:00** (dimineața) alături de trainer. În plus, în fiecare sâmbătă ai o sesiune extinsă, de la **09:00 - 13:00**, pentru ateliere practice și recapitulare aprofundată cu trainerul.",
+              desc: "Cursul are loc în sesiuni live zilnice, de luni până vineri, în intervalul **08:00 - 10:00** (dimineața) alături de trainer. În plus, în fiecare sâmbătă ai o sesiune extinsă, de la **09:00 - 13:00**, pentru ateliere practice și recapitulare aprofundată cu trainerul.",
             },
             {
               title: "Studii individuale",
-              body: "Pe lângă orele petrecute cu trainerul, se așteaptă să investești timp în învățare și practică individuală – până la **30 de ore pe săptămână** – pentru a aprofunda conceptele și a ține pasul cu ritmul alert al cursului. Acest efort suplimentar este esențial pentru a reuși să consolidezi cunoștințele și să îți atingi potențialul maxim.",
+              desc: "Pe lângă orele petrecute cu trainerul, se așteaptă să investești timp în învățare și practică individuală – până la **30 de ore pe săptămână** – pentru a aprofunda conceptele și a ține pasul cu ritmul alert al cursului. Acest efort suplimentar este esențial pentru a reuși să consolidezi cunoștințele și să îți atingi potențialul maxim.",
             },
             {
               title: "Durata și evaluări periodice",
-              body: "Programul este structurat pe o durată de aproximativ 3 luni (corespunzător unui *bootcamp* intensiv). La fiecare final de lună, vei avea o **evaluare** a progresului. Pe baza rezultatelor și a implicării tale, se va decide de comun acord continuarea cursului în luna următoare. Aceste evaluări periodice te ajută să conștientizezi nivelul atins și asigură că toți cursanții care merg mai departe au acumulat cunoștințele necesare.",
+              desc: "Programul este structurat pe o durată de aproximativ 3 luni (corespunzător unui *bootcamp* intensiv). La fiecare final de lună, vei avea o **evaluare** a progresului. Pe baza rezultatelor și a implicării tale, se va decide de comun acord continuarea cursului în luna următoare. Aceste evaluări periodice te ajută să conștientizezi nivelul atins și asigură că toți cursanții care merg mai departe au acumulat cunoștințele necesare.",
             },
           ],
-          schedule: {
-            heading: "Perioada de desfășurare a cursului:",
+          timeline: {
+            heading: "Calendar curs",
             items: [
               "Start: 20.10.2025",
               "20 octombrie - 20 noiembrie - curs",
@@ -721,27 +723,59 @@ export default function AcademyLanding({
                 </Card>
               ))}
             </div>
-            {/* Program Details Section */}
-            <section className="mt-16">
-              <div className="max-w-3xl mx-auto">
-                <h3 className={`${headingFont} text-2xl sm:text-3xl font-bold mb-6`}>
-                  {t.programDetails.heading}
-                </h3>
-                <div className="space-y-6">
-                  {t.programDetails.items.map((item, idx) => (
-                    <div key={idx}>
-                      <h4 className="font-semibold text-lg mb-2">{item.title}</h4>
-                      <MarkdownText>{item.body}</MarkdownText>
-                    </div>
-                  ))}
+            {/* Program Structure & Schedule Section */}
+            <section id="schedule" className="bg-[#FAFAFA]">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
+                <div className="max-w-2xl">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-[#3F8CEB]/10 text-[#3F8CEB] px-3 py-1 text-xs font-semibold">
+                    <Clock className="h-3.5 w-3.5" />
+                    {locale === "en" ? "Program Structure" : "Structura programului"}
+                  </div>
+                  <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>
+                    {t.schedule.heading}
+                  </h2>
+                  <div className="mt-4 text-muted-foreground">
+                    <MarkdownText>{t.schedule.sub}</MarkdownText>
+                  </div>
                 </div>
-                <div className="mt-8">
-                  <h4 className="font-semibold text-lg mb-2">{t.programDetails.schedule.heading}</h4>
-                  <ul className="list-disc pl-5 space-y-1">
-                    {t.programDetails.schedule.items.map((line, idx) => (
-                      <li key={idx}>{line}</li>
-                    ))}
-                  </ul>
+
+                <div className="mt-10 space-y-6">
+                  {t.schedule.items.map((item, idx) => (
+                    <Card key={idx} className="border-[#EDEDED]">
+                      <CardHeader>
+                        <CardTitle className={`${headingFont} text-lg flex items-center gap-3`}>
+                          <div className="h-8 w-8 rounded-lg bg-[#3F8CEB] flex items-center justify-center">
+                            <span className="text-white font-bold text-sm">{idx + 1}</span>
+                          </div>
+                          {item.title}
+                        </CardTitle>
+                        <CardDescription className="text-sm ml-11">
+                          <MarkdownText>{item.desc}</MarkdownText>
+                        </CardDescription>
+                      </CardHeader>
+                    </Card>
+                  ))}
+
+                  <Card className="border-[#EDEDED] bg-gradient-to-r from-[#6246EA]/5 to-[#3F8CEB]/5">
+                    <CardHeader>
+                      <CardTitle className={`${headingFont} text-lg flex items-center gap-3`}>
+                        <div className="h-8 w-8 rounded-lg bg-[#FEE07A] flex items-center justify-center">
+                          <Clock className="h-4 w-4 text-[#212429]" />
+                        </div>
+                        {t.schedule.timeline.heading}
+                      </CardTitle>
+                      <CardContent className="p-0 ml-11">
+                        <ul className="space-y-2">
+                          {t.schedule.timeline.items.map((item, idx) => (
+                            <li key={idx} className="flex items-center gap-2 text-sm">
+                              <div className="h-2 w-2 rounded-full bg-[#6246EA]" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </CardHeader>
+                  </Card>
                 </div>
               </div>
             </section>
