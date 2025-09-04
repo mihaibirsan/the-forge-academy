@@ -135,6 +135,34 @@ export default function AcademyLanding({
           "**Confidence and discipline** - not only do you know how to write code, but you know you can deliver in a real work environment",
         ],
       },
+        programDetails: {
+          heading: "Program Structure & Schedule",
+          sub: "How the Academy works: daily live sessions, individual study, and monthly evaluations.",
+          items: [
+            {
+              title: "Intensive Daily Program",
+              body: "The course takes place in live daily sessions, Monday to Friday, from **08:00 - 10:00** (morning) with the trainer. Additionally, every Saturday you have an extended session, from **09:00 - 13:00**, for practical workshops and in-depth review with the trainer.",
+            },
+            {
+              title: "Individual Study",
+              body: "Besides the hours spent with the trainer, you are expected to invest time in individual learning and practice – up to **30 hours per week** – to deepen concepts and keep up with the fast pace of the course. This extra effort is essential to consolidate your knowledge and reach your full potential.",
+            },
+            {
+              title: "Duration & Periodic Evaluations",
+              body: "The program is structured over approximately 3 months (an intensive bootcamp). At the end of each month, you will have a **progress evaluation**. Based on your results and involvement, the decision to continue the course for the next month will be made together. These periodic evaluations help you become aware of your level and ensure that all students who move forward have acquired the necessary knowledge.",
+            },
+          ],
+          schedule: {
+            heading: "Course Timeline",
+            items: [
+              "Start: 20.10.2025",
+              "October 20 - November 20: course",
+              "November 20 - December 20: course",
+              "December 20 - January 5: holiday",
+              "January 5 - February 5: course",
+            ],
+          },
+        },
       program: {
         heading: "Complete Curriculum",
         sub: "Not just a list of technologies, but a step-by-step path - from the basics of programming to the moment when you can build your own full-stack application.",
@@ -278,6 +306,34 @@ export default function AcademyLanding({
           "**Încredere și disciplină** - nu doar că știi să scrii cod, dar știi că poți livra într-un mediu de lucru real",
         ],
       },
+        programDetails: {
+          heading: "Structura programului & calendar",
+          sub: "Cum se desfășoară Academia: sesiuni live zilnice, studiu individual și evaluări lunare.",
+          items: [
+            {
+              title: "Program intensiv zilnic",
+              body: "Cursul are loc în sesiuni live zilnice, de luni până vineri, în intervalul **08:00 - 10:00** (dimineața) alături de trainer. În plus, în fiecare sâmbătă ai o sesiune extinsă, de la **09:00 - 13:00**, pentru ateliere practice și recapitulare aprofundată cu trainerul.",
+            },
+            {
+              title: "Studii individuale",
+              body: "Pe lângă orele petrecute cu trainerul, se așteaptă să investești timp în învățare și practică individuală – până la **30 de ore pe săptămână** – pentru a aprofunda conceptele și a ține pasul cu ritmul alert al cursului. Acest efort suplimentar este esențial pentru a reuși să consolidezi cunoștințele și să îți atingi potențialul maxim.",
+            },
+            {
+              title: "Durata și evaluări periodice",
+              body: "Programul este structurat pe o durată de aproximativ 3 luni (corespunzător unui *bootcamp* intensiv). La fiecare final de lună, vei avea o **evaluare** a progresului. Pe baza rezultatelor și a implicării tale, se va decide de comun acord continuarea cursului în luna următoare. Aceste evaluări periodice te ajută să conștientizezi nivelul atins și asigură că toți cursanții care merg mai departe au acumulat cunoștințele necesare.",
+            },
+          ],
+          schedule: {
+            heading: "Calendar curs",
+            items: [
+              "Start: 20.10.2025",
+              "20 octombrie - 20 noiembrie - curs",
+              "20 noiembrie - 20 decembrie - curs",
+              "20 decembrie - 5 ianuarie - vacanță",
+              "5 ianuarie - 5 februarie - curs",
+            ],
+          },
+        },
       program: {
         heading: "Curriculum complet",
         sub: "Nu e doar o înșiruire de tehnologii, ci un traseu gândit pas cu pas – de la bazele programării, până la momentul în care poți construi propria aplicație full-stack.",
@@ -670,8 +726,67 @@ export default function AcademyLanding({
           </div>
         </section>
 
+        {/* Program Structure & Schedule */}
+        <section id="schedule" className="bg-[#FAFAFA]">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#6246EA]/10 text-[#6246EA] px-3 py-1 text-xs font-semibold">
+                <Clock className="h-3.5 w-3.5" />
+                {locale === "en" ? "Program Structure" : "Structura programului"}
+              </div>
+              <h2 className={`${headingFont} mt-4 text-3xl sm:text-4xl font-bold`}>
+                {t.programDetails.heading}
+              </h2>
+              <div className="mt-4 text-muted-foreground">
+                <MarkdownText>{t.programDetails.sub}</MarkdownText>
+              </div>
+            </div>
+
+            <div className="mt-10 space-y-6">
+              <div className="grid md:grid-cols-3 gap-6">
+                {t.programDetails.items.map((item, idx) => (
+                  <Card key={idx} className="border-[#EDEDED] h-full flex flex-col">
+                    <CardHeader>
+                      <CardTitle className={`${headingFont} text-lg flex items-center gap-3`}>
+                        <div className="h-8 w-8 rounded-lg bg-[#6246EA] flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">{idx + 1}</span>
+                        </div>
+                        {item.title}
+                      </CardTitle>
+                      <CardDescription className="text-sm ml-11">
+                        <MarkdownText>{item.body}</MarkdownText>
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
+                ))}
+              </div>
+
+              <Card className="border-[#EDEDED] bg-gradient-to-r from-[#6246EA]/5 to-[#3F8CEB]/5">
+                <CardHeader>
+                  <CardTitle className={`${headingFont} text-lg flex items-center gap-3`}>
+                    <div className="h-8 w-8 rounded-lg bg-[#FEE07A] flex items-center justify-center">
+                      <Clock className="h-4 w-4 text-[#212429]" />
+                    </div>
+                    {t.programDetails.schedule.heading}
+                  </CardTitle>
+                  <CardContent className="p-0 ml-11">
+                    <ul className="space-y-2">
+                      {t.programDetails.schedule.items.map((item, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-sm">
+                          <div className="h-2 w-2 rounded-full bg-[#6246EA]" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </CardHeader>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Success Stories */}
-        <section id="success" className="bg-[#FAFAFA]">
+        <section id="success">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#6246EA]/10 text-[#6246EA] px-3 py-1 text-xs font-semibold">
@@ -749,7 +864,7 @@ export default function AcademyLanding({
         </section>
 
         {/* Pricing */}
-        <section id="pricing">
+        <section id="pricing" className="bg-[#FAFAFA]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#6246EA]/10 text-[#6246EA] px-3 py-1 text-xs font-semibold">
