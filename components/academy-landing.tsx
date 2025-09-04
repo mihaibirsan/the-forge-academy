@@ -730,7 +730,7 @@ export default function AcademyLanding({
         <section id="schedule" className="bg-[#FAFAFA]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#3F8CEB]/10 text-[#3F8CEB] px-3 py-1 text-xs font-semibold">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#6246EA]/10 text-[#6246EA] px-3 py-1 text-xs font-semibold">
                 <Clock className="h-3.5 w-3.5" />
                 {locale === "en" ? "Program Structure" : "Structura programului"}
               </div>
@@ -747,7 +747,7 @@ export default function AcademyLanding({
                 <Card key={idx} className="border-[#EDEDED]">
                   <CardHeader>
                     <CardTitle className={`${headingFont} text-lg flex items-center gap-3`}>
-                      <div className="h-8 w-8 rounded-lg bg-[#3F8CEB] flex items-center justify-center">
+                        <div className="h-8 w-8 rounded-lg bg-[#6246EA] flex items-center justify-center">
                         <span className="text-white font-bold text-sm">{idx + 1}</span>
                       </div>
                       {item.title}
