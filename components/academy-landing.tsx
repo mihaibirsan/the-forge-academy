@@ -111,7 +111,7 @@ export default function AcademyLanding({
           ro: `© ${new Date().getFullYear()} Academia The Forge. Toate drepturile rezervate.`,
         },
         contact: { en: "Contact", ro: "Contact" },
-        email: { en: "hello@example.com", ro: "hello@example.com" },
+        email: { en: "academy.theforge@gmail.com", ro: "academy.theforge@gmail.com" },
       },
     }
 
