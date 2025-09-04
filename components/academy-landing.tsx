@@ -214,6 +214,7 @@ export default function AcademyLanding({
       success: {
         heading: "How Others Experienced the Academy",
         sub: "At The Forge Academy, the best evidence is not our promises, but the stories of those who have gone through the course. Each testimonial is a piece of a student's journey who changed their future through hard work and dedication.",
+        sub2: "Feedback from people who have worked in a team with the mentor:",
       },
       faq: {
         heading: "Frequently Asked Questions",
@@ -385,6 +386,7 @@ export default function AcademyLanding({
       success: {
         heading: "Cum au trăit alții experiența academiei",
         sub: "La The Forge Academy, cele mai bune dovezi nu sunt promisiunile noastre, ci poveștile celor care au trecut prin curs. Fiecare testimonial e o bucată din drumul unui cursant care și-a schimbat viitorul prin muncă și dedicare.",
+        sub2: "Feedback de la oameni care au lucrat în echipă cu mentorul:",
       },
       faq: {
         heading: "Întrebări frecvente",
@@ -805,7 +807,7 @@ export default function AcademyLanding({
               {[
                 {
                   name: "Tania P.",
-                  role: locale === "en" ? "JS Full Stack Developer" : "JS Full Stack Developer",
+                  role: "JS Full Stack Developer",
                   quote:
                     locale === "en"
                       ? "The six months of study were intense and comprehensive, covering a wide range of knowledge. By the end of the academy, I was well-prepared enough to get hired as a Junior JS Full Stack Developer and start working on a real project."
@@ -814,7 +816,7 @@ export default function AcademyLanding({
                 },
                 {
                   name: "Cosmin S.",
-                  role: locale === "en" ? "Software Engineer" : "Software Engineer",
+                  role: "Software Engineer",
                   quote:
                     locale === "en"
                       ? "The greatest value I received from Andrei goes beyond the technical aspects. He taught me how to think like a software engineer: how to structure an application, how to write clean and scalable code, how to solve problems in an organized way, and how to approach projects with a professional mindset."
@@ -823,12 +825,96 @@ export default function AcademyLanding({
                 },
                 {
                   name: "Andra D.",
-                  role: locale === "en" ? "Full-Stack Developer" : "Full-Stack Developer",
+                  role: "Full-Stack Developer",
                   quote:
                     locale === "en"
                       ? "As our group mentor, he provided us with a clear study framework, relevant resources, and guided us in his specific style, with balance and efficiency. He constantly encouraged us to work autonomously and was always available to clarify misunderstandings."
                       : "Ca mentor al grupului nostru, ne-a oferit un cadru de studiu clar, resurse relevante și ne-a ghidat în stilul său specific, cu echilibru și eficiență. Ne-a încurajat constant să lucrăm autonom și a fost mereu disponibil pentru a clarifica neînțelegeri.",
                   imgQuery: "full%20stack%20developer%20portrait",
+                },
+                {
+                  name: "Alexis M. P.",
+                  role: "Software Intern",
+                  quote:
+                    locale === "en"
+                      ? "With the help of mentor Dan Andrei Diac, I learned not only programming, but also what discipline, clarity, and quality work mean. The teaching method was different from the classic one – I learned through direct application, which helped me understand and retain concepts better."
+                      : "Cu ajutorul mentorului Dan Andrei Diac, nu am învățat doar programare, ci și ce înseamnă disciplina, claritatea și munca de calitate. Metoda de predare a fost diferită de cea clasică – am învățat prin aplicare directă, ceea ce m-a ajutat să înțeleg mai bine conceptele.",
+                  imgQuery: "student%20software%20intern",
+                },
+                {
+                  name: "Mihai B.",
+                  role: "Junior Developer",
+                  quote:
+                    locale === "en"
+                      ? "It was an incredible experience of study, practice, and connecting with like-minded people. Having a mentor dedicated to our learning process helped us enormously to understand the concepts presented."
+                      : "A fost o experiență incredibilă de studiu, practică și de creat conexiuni cu persoane similare mie. Faptul că am avut un mentor dedicat procesului nostru de învățare ne-a ajutat enorm să înțelegem lucrurile prezentate.",
+                  imgQuery: "junior%20developer%20team",
+                },
+              ].map((tst, i) => (
+                <Card key={i} className="border-[#EDEDED]">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-4">
+                      <Avatar>
+                        <AvatarImage
+                          src={`/abstract-geometric-shapes.png?height=64&width=64&query=${tst.imgQuery}`}
+                          alt={`Portrait of ${tst.name}`}
+                        />
+                        <AvatarFallback>
+                          {tst.name
+                            .split(" ")
+                            .map((s) => s[0])
+                            .join("")
+                            .slice(0, 2)
+                            .toUpperCase()}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className={`${headingFont} font-semibold`}>{tst.name}</p>
+                        <p className="text-sm text-muted-foreground">{tst.role}</p>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-sm">
+                      “{tst.quote}”
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="max-w-2xl">
+              <div className="mt-10 text-muted-foreground">
+                <MarkdownText>{t.success.sub2}</MarkdownText>
+              </div>
+            </div>
+
+            <div className="mt-10 grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  name: "Diana-Larrisa D.",
+                  role: "Team Member",
+                  quote:
+                    locale === "en"
+                      ? "Through his guidance, I witnessed a significant improvement in team cohesion and morale. Danut took the time to understand each team member, providing personalized support and mentorship for professional development."
+                      : "Prin îndrumarea lui, am observat o îmbunătățire semnificativă a coeziunii echipei și a moralului. Danut a acordat timp pentru a înțelege fiecare membru al echipei, oferind sprijin și mentorat personalizat pentru dezvoltarea profesională.",
+                  imgQuery: "team%20leader%20mentoring",
+                },
+                {
+                  name: "Ionut G. A.",
+                  role: "Team Member",
+                  quote:
+                    locale === "en"
+                      ? "Dan demonstrated a remarkable balance between project objectives and team motivation. He has a natural ability to guide and facilitate learning, providing constructive feedback and constant support for the personal and professional development of team members."
+                      : "Dan a demonstrat un echilibru remarcabil între obiectivele proiectului și motivarea echipei. Are o abilitate naturală de a ghida și facilita învățarea, oferind feedback constructiv și sprijin constant pentru dezvoltarea personală și profesională a membrilor echipei.",
+                  imgQuery: "team%20leader%20feedback",
+                },
+                {
+                  name: "Iosif B.",
+                  role: "Software Developer",
+                  quote:
+                    locale === "en"
+                      ? "Dan is a genuine leader, proactive and inspiring all along. He supported me in becoming a better developer and a more empathetic person, and it is an honour to have him as a mentor."
+                      : "Dan este un lider autentic, proactiv și inspirațional. M-a susținut să devin un dezvoltator mai bun și o persoană mai empatică, iar a-l avea ca mentor este o onoare.",
+                  imgQuery: "developer%20mentor%20portrait",
                 },
               ].map((tst, i) => (
                 <Card key={i} className="border-[#EDEDED]">
