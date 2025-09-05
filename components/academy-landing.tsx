@@ -76,6 +76,39 @@ const MarkdownText = ({ children, inline = false, className = "" }: { children: 
   </div>;
 }
 
+const TestimonialCard = (tst: ReturnType<typeof getAcademyTestimonials>[number], i: number) => (
+  <Card key={i} className="border-[#EDEDED]">
+    <CardContent className="p-6">
+      <div className="flex items-center gap-4">
+        <Avatar>
+          <AvatarImage
+            src={`/abstract-geometric-shapes.png?height=64&width=64&query=${tst.imgQuery}`}
+            alt={`Portrait of ${tst.name}`}
+          />
+          <AvatarFallback>
+            {tst.name
+              .split(" ")
+              .map((s) => s[0])
+              .join("")
+              .slice(0, 2)
+              .toUpperCase()}
+          </AvatarFallback>
+        </Avatar>
+        <div>
+          <p className={`font-semibold`}>
+            <Link href={tst.linkedIn} target="_blank" rel="noopener noreferrer">{tst.name}
+            <FaLinkedin className="ml-2 text-[#0A66C2] inline align-[-1px]" /></Link>
+          </p>
+          <p className="text-sm text-muted-foreground">{tst.role}</p>
+        </div>
+      </div>
+      <p className="mt-4 text-sm">
+        “{tst.quote}”
+      </p>
+    </CardContent>
+  </Card>
+);
+
 export default function AcademyLanding({
   formUrl = "#",
   defaultLocale = "ro",
@@ -894,38 +927,7 @@ export default function AcademyLanding({
             </div>
 
             <div className="mt-10 grid md:grid-cols-3 gap-6">
-              {getAcademyTestimonials(locale).map((tst, i) => (
-                <Card key={i} className="border-[#EDEDED]">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-4">
-                      <Avatar>
-                        <AvatarImage
-                          src={`/abstract-geometric-shapes.png?height=64&width=64&query=${tst.imgQuery}`}
-                          alt={`Portrait of ${tst.name}`}
-                        />
-                        <AvatarFallback>
-                          {tst.name
-                            .split(" ")
-                            .map((s) => s[0])
-                            .join("")
-                            .slice(0, 2)
-                            .toUpperCase()}
-                        </AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className={`${headingFont} font-semibold`}>
-                          <Link href={tst.linkedIn} target="_blank" rel="noopener noreferrer">{tst.name}
-                          <FaLinkedin className="ml-2 text-[#0A66C2] inline align-[-1px]" /></Link>
-                        </p>
-                        <p className="text-sm text-muted-foreground">{tst.role}</p>
-                      </div>
-                    </div>
-                    <p className="mt-4 text-sm">
-                      “{tst.quote}”
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+              {getAcademyTestimonials(locale).map(TestimonialCard)}
             </div>
 
             <div className="max-w-2xl">
@@ -935,38 +937,7 @@ export default function AcademyLanding({
             </div>
 
             <div className="mt-10 grid md:grid-cols-3 gap-6">
-              {getMentorTestimonials(locale).map((tst, i) => (
-                <Card key={i} className="border-[#EDEDED]">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-4">
-                      <Avatar>
-                        <AvatarImage
-                          src={`/abstract-geometric-shapes.png?height=64&width=64&query=${tst.imgQuery}`}
-                          alt={`Portrait of ${tst.name}`}
-                        />
-                        <AvatarFallback>
-                          {tst.name
-                            .split(" ")
-                            .map((s) => s[0])
-                            .join("")
-                            .slice(0, 2)
-                            .toUpperCase()}
-                        </AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className={`${headingFont} font-semibold`}>
-                          <Link href={tst.linkedIn} target="_blank" rel="noopener noreferrer">{tst.name}
-                          <FaLinkedin className="ml-2 text-[#0A66C2] inline align-[-1px]" /></Link>
-                        </p>
-                        <p className="text-sm text-muted-foreground">{tst.role}</p>
-                      </div>
-                    </div>
-                    <p className="mt-4 text-sm">
-                      “{tst.quote}”
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+              {getMentorTestimonials(locale).map(TestimonialCard)}
             </div>
           </div>
         </section>
