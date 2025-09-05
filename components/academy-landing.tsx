@@ -33,6 +33,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { GraduationCap, Rocket, Clock, CheckCircle2, Code2, Users2, Briefcase, Star, Globe, Menu, X, GitBranch, Database, Monitor, Cloud, Brain, DollarSign } from 'lucide-react'
+import { FaLinkedin } from "react-icons/fa";
 
 type Locale = "en" | "ro"
 
@@ -725,7 +726,18 @@ export default function AcademyLanding({
                     priority
                   />
                 </div>
-                <h2 className={`${headingFont} text-3xl sm:text-4xl font-bold mb-6`}>{t.mentor.heading}</h2>
+                <h2 className={`${headingFont} text-3xl sm:text-4xl font-bold mb-6`}>
+                  {t.mentor.heading}{' '}
+                  <Link
+                    href="https://www.linkedin.com/in/dan-andrei-diac-7568918b/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Mentor's LinkedIn profile"
+                    className="inline-flex items-baseline"
+                  >
+                    <FaLinkedin className="h-7 w-7 text-[#0A66C2]" />
+                  </Link>
+                </h2>
                 <div className="text-lg text-muted-foreground leading-relaxed space-y-6">
                   <MarkdownText>{t.mentor.intro}</MarkdownText>
                   <Dialog>
@@ -881,6 +893,7 @@ export default function AcademyLanding({
               {[
                 {
                   name: "Tania P.",
+                  linkedIn: "https://www.linkedin.com/in/tania-fecheta-64ba59170/",
                   role: "JS Full Stack Developer",
                   quote:
                     locale === "en"
@@ -890,6 +903,7 @@ export default function AcademyLanding({
                 },
                 {
                   name: "Cosmin S.",
+                  linkedIn: "https://www.linkedin.com/in/stan-cosmin/",
                   role: "Software Engineer",
                   quote:
                     locale === "en"
@@ -899,6 +913,7 @@ export default function AcademyLanding({
                 },
                 {
                   name: "Andra D.",
+                  linkedIn: "https://www.linkedin.com/in/andra-danalachi-70a928130/",
                   role: "Full-Stack Developer",
                   quote:
                     locale === "en"
@@ -908,6 +923,7 @@ export default function AcademyLanding({
                 },
                 {
                   name: "Alexis M. P.",
+                  linkedIn: "https://www.linkedin.com/in/partac-alexis-matei-790b33241/",
                   role: "Software Intern",
                   quote:
                     locale === "en"
@@ -917,6 +933,7 @@ export default function AcademyLanding({
                 },
                 {
                   name: "Mihai B.",
+                  linkedIn: "https://www.linkedin.com/in/mihai-bojescu/",
                   role: "Junior Developer",
                   quote:
                     locale === "en"
@@ -943,7 +960,10 @@ export default function AcademyLanding({
                         </AvatarFallback>
                       </Avatar>
                       <div>
-                        <p className={`${headingFont} font-semibold`}>{tst.name}</p>
+                        <p className={`${headingFont} font-semibold`}>
+                          <Link href={tst.linkedIn} target="_blank" rel="noopener noreferrer">{tst.name}
+                          <FaLinkedin className="ml-2 text-[#0A66C2] inline align-[-1px]" /></Link>
+                        </p>
                         <p className="text-sm text-muted-foreground">{tst.role}</p>
                       </div>
                     </div>
@@ -965,6 +985,7 @@ export default function AcademyLanding({
               {[
                 {
                   name: "Diana-Larrisa D.",
+                  linkedIn: "https://www.linkedin.com/in/diana-larrisa-dascalescu-01b8b1101/",
                   role: "Team Member",
                   quote:
                     locale === "en"
@@ -974,6 +995,7 @@ export default function AcademyLanding({
                 },
                 {
                   name: "Ionut G. A.",
+                  linkedIn: "https://www.linkedin.com/in/alexa-ionut-gabriel/",
                   role: "Team Member",
                   quote:
                     locale === "en"
@@ -983,6 +1005,7 @@ export default function AcademyLanding({
                 },
                 {
                   name: "Iosif B.",
+                  linkedIn: "https://www.linkedin.com/in/iosifboanca/",
                   role: "Software Developer",
                   quote:
                     locale === "en"
@@ -1009,7 +1032,10 @@ export default function AcademyLanding({
                         </AvatarFallback>
                       </Avatar>
                       <div>
-                        <p className={`${headingFont} font-semibold`}>{tst.name}</p>
+                        <p className={`${headingFont} font-semibold`}>
+                          <Link href={tst.linkedIn} target="_blank" rel="noopener noreferrer">{tst.name}
+                          <FaLinkedin className="ml-2 text-[#0A66C2] inline align-[-1px]" /></Link>
+                        </p>
                         <p className="text-sm text-muted-foreground">{tst.role}</p>
                       </div>
                     </div>
