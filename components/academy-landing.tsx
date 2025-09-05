@@ -691,8 +691,84 @@ export default function AcademyLanding({
           </div>
         </section>
 
+        {/* About the Mentor */}
+        <section id="about-mentor">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
+            <div className="grid lg:grid-cols-[1fr_420px] gap-10 lg:gap-16 items-start">
+              <div>
+                <div className="relative size-[130px] overflow-hidden rounded-full shadow-2xl ring-2 ring-[#6246EA]/30 float-right ml-6 mb-6 lg:hidden sm:size-[220px]">
+                  <Image
+                    src="/dan-andrei-diac-profile.jpg"
+                    alt="Dan Andrei Diac (mentor)"
+                    fill
+                    className="object-cover rounded-full"
+                    priority
+                  />
+                </div>
+                <h2 className={`${headingFont} text-3xl sm:text-4xl font-bold mb-6`}>{locale === "en" ? "About the mentor" : "Despre mentor"}</h2>
+                <div className="text-lg text-muted-foreground leading-relaxed space-y-6">
+                  <MarkdownText>{locale === "en" ? `
+Hi, I'm Dan.
+
+Over the last 20 years, I've worn many "hats" in IT: developer, team lead, account manager, CTO. Over time, I've used various programming languages, including Ruby [on Rails], PHP, Python, Java. My richest experience is building applications, web or mobile, using JS (or JS frameworks): I've migrated or improved old applications and built new products from scratch. More recently, I use AI: I use it almost daily and believe it's very valuable. But I use it the same way I used to use "Google" before and certainly not as a miraculous tool that builds applications while I drink my coffee.
+
+What defines me, however, is not just the results and experience, but a passion for learning and mentorship. I provide feedback naturally, both in person and in groups: academies or software development teams. Every time, the greatest joy has been seeing someone "get it", gain confidence, and then develop a passion for building.
+
+It helps me when my work is recognized and when I receive feedback. The most appreciated feedback is from people I've interacted with directly. So far, others have said I'm "an authentic leader", "a patient and attentive mentor", "a guy who raises the standard and builds trust in the team". Thank you.
+
+Until now, mentorship has been based on opportunity: if we happened to work on the same project or in the same context. I believe it can be even better: through a controlled effort, dedicated to learning and developing new skills.
+
+That's how The Forge Academy was born – a place where we don't just teach technology, but forge character, discipline, and autonomy. And yes, it's not for everyone. If you're at that point in life where you want to make a change, learn something new, and are willing to put in the work, then "we've found each other".
+
+Things I've said before and would say again:
+
+If you want to go fast, go alone. If you want to go far, go together with someone.
+
+If you focus on the problem, it grows. If you focus on the solution, you'll find it.
+
+There is no magic. There are only things we don't know or don't understand.
+`:`
+Salut, eu sunt Dan.
+
+În ultimii 20 de ani am tot purtat diferite „pălării” în IT: developer, team lead, account manager, CTO. De-a lungul timpului am folosit diverse limbaje de programare, precum: Ruby [on Rails], PHP, Python, Java. Cea mai bogată experiență este de a construi aplicații, web sau mobile, folosind JS (sau framework-uri JS): am migrat sau îmbunătățit aplicații vechi și am pus pe picioare produse noi. Mai nou folosesc AI: îl folosesc aproape zilnic și cred că e foarte valoros. Dar îl folosesc la fel cum foloseam „Google” înainte și nicidecum ca un instrument miraculos care face aplicații cât timp eu îmi beau cafeaua.
+
+Am condus echipe mai mici și mai mari (20+ oameni) și am învățat că, indiferent de proiect, tehnologie sau dificultăți, cheia este echipa și felul în care lucrezi cu ceilalți. Am mers în ședințe „pe buget și pe obiective” și am fost și în ședințe de pair-programming în investigarea și rezolvarea vreunui bug. Astea din urmă încă îmi plac mai mult.
+
+Ceea ce mă definește însă nu sunt doar rezultatele și experiența, ci pasiunea pentru învățare și mentorat. Ofer feedback și în mod natural, atât în persoană cât și în grupuri: academii sau echipe de dezvoltare software. De fiecare dată, bucuria cea mai mare a fost să văd cum cineva „se prinde”, prinde încredere și apoi capătă pasiunea de a construi.
+
+Mă ajută când munca mea e recunoscută și când primesc feedback. Cel mai apreciat feedback e cel de la oamenii cu care am interacționat în mod direct. Până acum, alții au zis că sunt „un lider autentic”, „un mentor răbdător și atent”, „un tip care ridică standardul și creează încredere în echipă”. Mulțumesc.
+
+Până acum, mentoratul s-a bazat pe oportunitate: dacă ne-am nimerit să lucrăm pe același proiect sau în același context. Cred că se poate și mai bine: printr-un efort controlat, dedicat învățării și dezvoltării de noi abilități.
+
+Așa s-a născut și The Forge Academy – locul unde nu predăm doar tehnologie, ci forjăm caractere, disciplină și autonomie. Și da, nu e pentru oricine. Dacă ești în acel moment în viață când vrei să faci o schimbare, să înveți ceva nou și ești dispus să pui osul la treabă, atunci „ne-am găsit”.
+
+Lucruri pe care le-am mai zis și le-aș mai zice:
+
+Dacă vrei să ajungi repede, mergi singur. Dacă vrei să ajungi departe, mergi împreună cu cineva.
+
+Dacă te concentrezi pe problemă, ea crește. Dacă te concentrezi pe soluție, o vei găsi.
+
+Nu există magie. Există doar lucruri pe care nu le știm sau nu le înțelegem.
+                  `}</MarkdownText>
+                </div>
+              </div>
+              <div className="flex justify-start items-start">
+                <div className="relative w-[271px] h-[271px] overflow-hidden rounded-full shadow-2xl ring-2 ring-[#6246EA]/30 float-right ml-6 mb-6 hidden lg:block">
+                  <Image
+                    src="/dan-andrei-diac-profile.jpg"
+                    alt="Dan Andrei Diac (mentor)"
+                    fill
+                    className="object-cover rounded-full"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Program */}
-        <section id="program">
+        <section id="program" className="bg-[#FAFAFA]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#6246EA]/10 text-[#6246EA] px-3 py-1 text-xs font-semibold">
@@ -729,7 +805,7 @@ export default function AcademyLanding({
         </section>
 
         {/* Program Structure & Schedule */}
-        <section id="schedule" className="bg-[#FAFAFA]">
+        <section id="schedule">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#6246EA]/10 text-[#6246EA] px-3 py-1 text-xs font-semibold">
@@ -788,7 +864,7 @@ export default function AcademyLanding({
         </section>
 
         {/* Success Stories */}
-        <section id="success">
+        <section id="success" className="bg-[#FAFAFA]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#6246EA]/10 text-[#6246EA] px-3 py-1 text-xs font-semibold">
@@ -950,7 +1026,7 @@ export default function AcademyLanding({
         </section>
 
         {/* Pricing */}
-        <section id="pricing" className="bg-[#FAFAFA]">
+        <section id="pricing">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#6246EA]/10 text-[#6246EA] px-3 py-1 text-xs font-semibold">
@@ -1051,7 +1127,7 @@ export default function AcademyLanding({
         </section>
 
         {/* FAQ */}
-        <section id="faq">
+        <section id="faq" className="bg-[#FAFAFA]">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16 sm:py-20">
             <h2 className={`${headingFont} text-3xl sm:text-4xl font-bold`}>{t.faq.heading}</h2>
             <div className="mt-6">
