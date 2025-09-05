@@ -24,6 +24,14 @@ import {
 } from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import { GraduationCap, Rocket, Clock, CheckCircle2, Code2, Users2, Briefcase, Star, Globe, Menu, X, GitBranch, Database, Monitor, Cloud, Brain, DollarSign } from 'lucide-react'
 
 type Locale = "en" | "ro"
@@ -279,6 +287,12 @@ export default function AcademyLanding({
           bonus: "Bonus: upon successful graduation, you receive back 10% of the total amount paid"
         }
       },
+      mentor: {
+        heading: "About the mentor",
+        intro: "Hi, I'm Dan.\n\nAfter two decades in IT, I've learned that technology is important, but people are essential. Beyond languages, frameworks, or AI, what truly matters is how you learn, how you work with others, and how you grow as a professional. The Forge Academy was born from the conviction that we don't just teach skills, we shape character. If you're ready for real effort and authentic transformation, you might be exactly where you need to be.",
+        readMore: "Read full letter",
+        fullLetter: "Hi, I'm Dan.\n\nOver the last 20 years, I've worn many \"hats\" in IT: developer, team lead, account manager, CTO. Over time, I've used various programming languages, including Ruby [on Rails], PHP, Python, Java. My richest experience is building applications, web or mobile, using JS (or JS frameworks): I've migrated or improved old applications and built new products from scratch. More recently, I use AI: I use it almost daily and believe it's very valuable. But I use it the same way I used to use \"Google\" before and certainly not as a miraculous tool that builds applications while I drink my coffee.\n\nWhat defines me, however, is not just the results and experience, but a passion for learning and mentorship. I provide feedback naturally, both in person and in groups: academies or software development teams. Every time, the greatest joy has been seeing someone \"get it\", gain confidence, and then develop a passion for building.\n\nIt helps me when my work is recognized and when I receive feedback. The most appreciated feedback is from people I've interacted with directly. So far, others have said I'm \"an authentic leader\", \"a patient and attentive mentor\", \"a guy who raises the standard and builds trust in the team\". Thank you.\n\nUntil now, mentorship has been based on opportunity: if we happened to work on the same project or in the same context. I believe it can be even better: through a controlled effort, dedicated to learning and developing new skills.\n\nThat's how The Forge Academy was born – a place where we don't just teach technology, but forge character, discipline, and autonomy. And yes, it's not for everyone. If you're at that point in life where you want to make a change, learn something new, and are willing to put in the work, then \"we've found each other\".\n\nThings I've said before and would say again:\n\nIf you want to go fast, go alone. If you want to go far, go together with someone.\n\nIf you focus on the problem, it grows. If you focus on the solution, you'll find it.\n\nThere is no magic. There are only things we don't know or don't understand."
+      },
       finalCta: {
         heading: "Ready to Change Your Career?",
         sub:
@@ -450,6 +464,12 @@ export default function AcademyLanding({
           ],
           bonus: "Bonus: la absolvirea cu succes, primești înapoi 10% din suma totală plătită"
         }
+      },
+      mentor: {
+        heading: "Despre mentor",
+        intro: "Salut, eu sunt Dan.\n\nDupă două decenii în IT, am învățat că tehnologia e importantă, dar oamenii sunt esențiali. Dincolo de limbaje, framework-uri sau AI, ceea ce contează cu adevărat este cum înveți, cum lucrezi cu ceilalți și cum crești ca profesionist. The Forge Academy s-a născut din convingerea că nu predăm doar skill-uri, ci formăm caractere. Dacă ești gata de un efort real și o transformare autentică, s-ar putea să fii exact unde trebuie.",
+        readMore: "Citește scrisoarea completă",
+        fullLetter: "Salut, eu sunt Dan.\n\nÎn ultimii 20 de ani am tot purtat diferite \"pălării\" în IT: developer, team lead, account manager, CTO. De-a lungul timpului am folosit diverse limbaje de programare, precum: Ruby [on Rails], PHP, Python, Java. Cea mai bogată experiență este de a construi aplicații, web sau mobile, folosind JS (sau framework-uri JS): am migrat sau îmbunătățit aplicații vechi și am pus pe picioare produse noi. Mai nou folosesc AI: îl folosesc aproape zilnic și cred că e foarte valoros. Dar îl folosesc la fel cum foloseam \"Google\" înainte și nicidecum ca un instrument miraculos care face aplicații cât timp eu îmi beau cafeaua.\n\nAm condus echipe mai mici și mai mari (20+ oameni) și am învățat că, indiferent de proiect, tehnologie sau dificultăți, cheia este echipa și felul în care lucrezi cu ceilalți. Am mers în ședințe \"pe buget și pe obiective\" și am fost și în ședințe de pair-programming în investigarea și rezolvarea vreunui bug. Astea din urmă încă îmi plac mai mult.\n\nCeea ce mă definește însă nu sunt doar rezultatele și experiența, ci pasiunea pentru învățare și mentorat. Ofer feedback și în mod natural, atât în persoană cât și în grupuri: academii sau echipe de dezvoltare software. De fiecare dată, bucuria cea mai mare a fost să văd cum cineva \"se prinde\", prinde încredere și apoi capătă pasiunea de a construi.\n\nMă ajută când munca mea e recunoscută și când primesc feedback. Cel mai apreciat feedback e cel de la oamenii cu care am interacționat în mod direct. Până acum, alții au zis că sunt \"un lider autentic\", \"un mentor răbdător și atent\", \"un tip care ridică standardul și creează încredere în echipă\". Mulțumesc.\n\nPână acum, mentoratul s-a bazat pe oportunitate: dacă ne-am nimerit să lucrăm pe același proiect sau în același context. Cred că se poate și mai bine: printr-un efort controlat, dedicat învățării și dezvoltării de noi abilități.\n\nAșa s-a născut și The Forge Academy – locul unde nu predăm doar tehnologie, ci forjăm caractere, disciplină și autonomie. Și da, nu e pentru oricine. Dacă ești în acel moment în viață când vrei să faci o schimbare, să înveți ceva nou și ești dispus să pui osul la treabă, atunci \"ne-am găsit\".\n\nLucruri pe care le-am mai zis și le-aș mai zice:\n\nDacă vrei să ajungi repede, mergi singur. Dacă vrei să ajungi departe, mergi împreună cu cineva.\n\nDacă te concentrezi pe problemă, ea crește. Dacă te concentrezi pe soluție, o vei găsi.\n\nNu există magie. Există doar lucruri pe care nu le știm sau nu le înțelegem."
       },
       finalCta: {
         heading: "Pregătit să îți schimbi cariera?",
@@ -705,51 +725,29 @@ export default function AcademyLanding({
                     priority
                   />
                 </div>
-                <h2 className={`${headingFont} text-3xl sm:text-4xl font-bold mb-6`}>{locale === "en" ? "About the mentor" : "Despre mentor"}</h2>
+                <h2 className={`${headingFont} text-3xl sm:text-4xl font-bold mb-6`}>{t.mentor.heading}</h2>
                 <div className="text-lg text-muted-foreground leading-relaxed space-y-6">
-                  <MarkdownText>{locale === "en" ? `
-Hi, I'm Dan.
-
-Over the last 20 years, I've worn many "hats" in IT: developer, team lead, account manager, CTO. Over time, I've used various programming languages, including Ruby [on Rails], PHP, Python, Java. My richest experience is building applications, web or mobile, using JS (or JS frameworks): I've migrated or improved old applications and built new products from scratch. More recently, I use AI: I use it almost daily and believe it's very valuable. But I use it the same way I used to use "Google" before and certainly not as a miraculous tool that builds applications while I drink my coffee.
-
-What defines me, however, is not just the results and experience, but a passion for learning and mentorship. I provide feedback naturally, both in person and in groups: academies or software development teams. Every time, the greatest joy has been seeing someone "get it", gain confidence, and then develop a passion for building.
-
-It helps me when my work is recognized and when I receive feedback. The most appreciated feedback is from people I've interacted with directly. So far, others have said I'm "an authentic leader", "a patient and attentive mentor", "a guy who raises the standard and builds trust in the team". Thank you.
-
-Until now, mentorship has been based on opportunity: if we happened to work on the same project or in the same context. I believe it can be even better: through a controlled effort, dedicated to learning and developing new skills.
-
-That's how The Forge Academy was born – a place where we don't just teach technology, but forge character, discipline, and autonomy. And yes, it's not for everyone. If you're at that point in life where you want to make a change, learn something new, and are willing to put in the work, then "we've found each other".
-
-Things I've said before and would say again:
-
-If you want to go fast, go alone. If you want to go far, go together with someone.
-
-If you focus on the problem, it grows. If you focus on the solution, you'll find it.
-
-There is no magic. There are only things we don't know or don't understand.
-`:`
-Salut, eu sunt Dan.
-
-În ultimii 20 de ani am tot purtat diferite „pălării” în IT: developer, team lead, account manager, CTO. De-a lungul timpului am folosit diverse limbaje de programare, precum: Ruby [on Rails], PHP, Python, Java. Cea mai bogată experiență este de a construi aplicații, web sau mobile, folosind JS (sau framework-uri JS): am migrat sau îmbunătățit aplicații vechi și am pus pe picioare produse noi. Mai nou folosesc AI: îl folosesc aproape zilnic și cred că e foarte valoros. Dar îl folosesc la fel cum foloseam „Google” înainte și nicidecum ca un instrument miraculos care face aplicații cât timp eu îmi beau cafeaua.
-
-Am condus echipe mai mici și mai mari (20+ oameni) și am învățat că, indiferent de proiect, tehnologie sau dificultăți, cheia este echipa și felul în care lucrezi cu ceilalți. Am mers în ședințe „pe buget și pe obiective” și am fost și în ședințe de pair-programming în investigarea și rezolvarea vreunui bug. Astea din urmă încă îmi plac mai mult.
-
-Ceea ce mă definește însă nu sunt doar rezultatele și experiența, ci pasiunea pentru învățare și mentorat. Ofer feedback și în mod natural, atât în persoană cât și în grupuri: academii sau echipe de dezvoltare software. De fiecare dată, bucuria cea mai mare a fost să văd cum cineva „se prinde”, prinde încredere și apoi capătă pasiunea de a construi.
-
-Mă ajută când munca mea e recunoscută și când primesc feedback. Cel mai apreciat feedback e cel de la oamenii cu care am interacționat în mod direct. Până acum, alții au zis că sunt „un lider autentic”, „un mentor răbdător și atent”, „un tip care ridică standardul și creează încredere în echipă”. Mulțumesc.
-
-Până acum, mentoratul s-a bazat pe oportunitate: dacă ne-am nimerit să lucrăm pe același proiect sau în același context. Cred că se poate și mai bine: printr-un efort controlat, dedicat învățării și dezvoltării de noi abilități.
-
-Așa s-a născut și The Forge Academy – locul unde nu predăm doar tehnologie, ci forjăm caractere, disciplină și autonomie. Și da, nu e pentru oricine. Dacă ești în acel moment în viață când vrei să faci o schimbare, să înveți ceva nou și ești dispus să pui osul la treabă, atunci „ne-am găsit”.
-
-Lucruri pe care le-am mai zis și le-aș mai zice:
-
-Dacă vrei să ajungi repede, mergi singur. Dacă vrei să ajungi departe, mergi împreună cu cineva.
-
-Dacă te concentrezi pe problemă, ea crește. Dacă te concentrezi pe soluție, o vei găsi.
-
-Nu există magie. Există doar lucruri pe care nu le știm sau nu le înțelegem.
-                  `}</MarkdownText>
+                  <MarkdownText>{t.mentor.intro}</MarkdownText>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="outline" className="mt-4">
+                        {t.mentor.readMore}
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                      <DialogHeader>
+                        <DialogTitle className={`${headingFont} text-2xl font-bold`}>
+                          {t.mentor.heading}
+                        </DialogTitle>
+                        <DialogDescription className="sr-only">
+                          {locale === "en" ? "Full letter from Dan, the mentor" : "Scrisoarea completă de la Dan, mentorul"}
+                        </DialogDescription>
+                      </DialogHeader>
+                      <div className="prose prose-lg max-w-none">
+                        <MarkdownText>{t.mentor.fullLetter}</MarkdownText>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </div>
               </div>
               <div className="flex justify-start items-start">
