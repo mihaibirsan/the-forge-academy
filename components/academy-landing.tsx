@@ -105,6 +105,26 @@ const TestimonialCard = (tst: ReturnType<typeof getAcademyTestimonials>[number],
       <p className="mt-4 text-sm">
         “{tst.quote}”
       </p>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant="outline" className="mt-4">
+            {/* {t.mentor.readMore} */}Read more
+          </Button>
+        </DialogTrigger>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className={`text-2xl font-bold`}>
+              {tst.name}
+            </DialogTitle>
+            <DialogDescription className="sr-only">
+              {/* {locale === "en" ? "Full letter from Dan, the mentor" : "Scrisoarea completă de la Dan, mentorul"} */}Full testimonial from {tst.name}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="prose prose-lg max-w-none">
+            <MarkdownText>{tst.full}</MarkdownText>
+          </div>
+        </DialogContent>
+      </Dialog>
     </CardContent>
   </Card>
 );
