@@ -3,7 +3,7 @@ export const getAcademyTestimonials = (locale: "en" | "ro") => [
   {
     name: "Tania P.",
     linkedIn: "https://www.linkedin.com/in/tania-fecheta-64ba59170/",
-    role: "JS Full Stack Developer",
+    role: "Full Stack JavaScript Developer",
     quote:
       locale === "en"
         ? "The six months of study were intense and comprehensive, covering a wide range of knowledge. By the end of the academy, I was well-prepared enough to get hired as a Junior JS Full Stack Developer and start working on a real project."
@@ -22,7 +22,7 @@ Am urmat academia susținută de Dan în momentul în care am decis să fac tran
   {
     name: "Cosmin S.",
     linkedIn: "https://www.linkedin.com/in/stan-cosmin/",
-    role: "Software Engineer",
+    role: "Full Stack JavaScript Developer",
     quote:
       locale === "en"
         ? "The greatest value I received from Andrei goes beyond the technical aspects. He taught me how to think like a software engineer: how to structure an application, how to write clean and scalable code, how to solve problems in an organized way, and how to approach projects with a professional mindset."
@@ -53,7 +53,7 @@ Recomand cu toată încrederea The Forge Academy și mentoratul lui Dan Andrei D
   {
     name: "Andra D.",
     linkedIn: "https://www.linkedin.com/in/andra-danalachi-70a928130/",
-    role: "Full-Stack Developer",
+    role: "Frontend Developer",
     quote:
       locale === "en"
         ? "As our group mentor, he provided us with a clear study framework, relevant resources, and guided us in his specific style, with balance and efficiency. He constantly encouraged us to work autonomously and was always available to clarify misunderstandings."
@@ -66,7 +66,7 @@ Recomand cu toată încrederea The Forge Academy și mentoratul lui Dan Andrei D
   {
     name: "Alexis M. P.",
     linkedIn: "https://www.linkedin.com/in/partac-alexis-matei-790b33241/",
-    role: "Software Intern",
+    role: "Student",
     quote:
       locale === "en"
         ? "With the help of mentor Dan Andrei Diac, I learned not only programming, but also what discipline, clarity, and quality work mean. The teaching method was different from the classic one – I learned through direct application, which helped me understand and retain concepts better."
@@ -87,7 +87,7 @@ Dacă ești pasionat de acest domeniu și simți nevoia de un start în cariera,
   {
     name: "Mihai B.",
     linkedIn: "https://www.linkedin.com/in/mihai-bojescu/",
-    role: "Junior Developer",
+    role: "Full Stack Engineer",
     quote:
       locale === "en"
         ? "It was an incredible experience of study, practice, and connecting with like-minded people. Having a mentor dedicated to our learning process helped us enormously to understand the concepts presented."
@@ -111,7 +111,7 @@ export const getMentorTestimonials = (locale: "en" | "ro") => [
   {
     name: "Diana-Larrisa D.",
     linkedIn: "https://www.linkedin.com/in/diana-larrisa-dascalescu-01b8b1101/",
-    role: "Team Member",
+    role: "Frontend Developer, JavaScript",
     quote:
       locale === "en"
         ? "Through his guidance, I witnessed a significant improvement in team cohesion and morale. Danut took the time to understand each team member, providing personalized support and mentorship for professional development."
@@ -131,7 +131,7 @@ I highly recommend Danut to any company seeking a dedicated and skilled team lea
   {
     name: "Ionut G. A.",
     linkedIn: "https://www.linkedin.com/in/alexa-ionut-gabriel/",
-    role: "Team Member",
+    role: "Full Stack Web Developer",
     quote:
       locale === "en"
         ? "Dan demonstrated a remarkable balance between project objectives and team motivation. He has a natural ability to guide and facilitate learning, providing constructive feedback and constant support for the personal and professional development of team members."
@@ -154,7 +154,7 @@ I have said what I had to say. I just need to add one more thing: Dan, thank you
   {
     name: "Iosif B.",
     linkedIn: "https://www.linkedin.com/in/iosifboanca/",
-    role: "Software Developer",
+    role: "Solutions Architect",
     quote:
       locale === "en"
         ? "Dan is a genuine leader, proactive and inspiring all along. He supported me in becoming a better developer and a more empathetic person, and it is an honour to have him as a mentor."
