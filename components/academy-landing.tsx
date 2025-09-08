@@ -559,7 +559,7 @@ export default function AcademyLanding({
               <span className={`font-semibold ${headingFont}`}>Academia The Forge</span>
             </Link>
 
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden lg:flex items-center gap-6">
               <button className="text-sm hover:text-[#6246EA] transition-colors" onClick={() => scrollTo("about")}>
                 {t.common.nav.about[locale]}
               </button>
@@ -595,7 +595,7 @@ export default function AcademyLanding({
             </nav>
 
             <button
-              className="md:hidden rounded-md p-2 hover:bg-muted"
+              className="lg:hidden rounded-md p-2 hover:bg-muted"
               aria-label="Open menu"
               onClick={() => setMenuOpen((v) => !v)}
             >
@@ -604,7 +604,7 @@ export default function AcademyLanding({
           </div>
 
           {menuOpen && (
-            <div className="md:hidden pb-4">
+            <div className="lg:hidden pb-4">
               <div className="flex flex-col gap-2 pt-2">
                 <Button variant="ghost" className="justify-start" onClick={() => scrollTo("about")}>
                   {t.common.nav.about[locale]}
@@ -888,7 +888,7 @@ export default function AcademyLanding({
             </div>
 
             <div className="mt-10 space-y-6">
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid lg:grid-cols-3 gap-6">
                 {t.programDetails.items.map((item, idx) => (
                   <Card key={idx} className="border-[#EDEDED] h-full flex flex-col">
                     <CardHeader>
@@ -946,7 +946,7 @@ export default function AcademyLanding({
               </div>
             </div>
 
-            <div className="mt-10 grid md:grid-cols-3 gap-6">
+            <div className="mt-10 grid lg:grid-cols-3 md:grid-cols-2 gap-6">
               {getAcademyTestimonials(locale).map(TestimonialCard)}
             </div>
 
@@ -956,7 +956,7 @@ export default function AcademyLanding({
               </div>
             </div>
 
-            <div className="mt-10 grid md:grid-cols-3 gap-6">
+            <div className="mt-10 grid lg:grid-cols-3 md:grid-cols-2 gap-6">
               {getMentorTestimonials(locale).map(TestimonialCard)}
             </div>
           </div>
@@ -991,7 +991,7 @@ export default function AcademyLanding({
                     {t.pricing.group.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-4 flex-1">
                   <div className="space-y-2">
                     <p className="font-semibold">{t.pricing.group.duration}</p>
                     <p className="font-semibold text-lg text-[#6246EA]">{t.pricing.group.totalPrice}</p>
@@ -1009,11 +1009,12 @@ export default function AcademyLanding({
                       ))}
                     </ul>
                   </div>
-
+                </CardContent>
+                <CardFooter>
                   <div className="pt-4 border-t">
                     <p className="font-semibold text-green-600">{t.pricing.group.bonus}</p>
                   </div>
-                </CardContent>
+                </CardFooter>
               </Card>
 
               {/* One-on-One Course */}
@@ -1023,7 +1024,7 @@ export default function AcademyLanding({
                     {t.pricing.oneOnOne.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-4 flex-1">
                   <div className="space-y-2">
                     <p className="font-semibold">{t.pricing.oneOnOne.duration}</p>
                     <p className="font-semibold text-lg text-[#6246EA]">{t.pricing.oneOnOne.totalPrice}</p>
@@ -1053,11 +1054,12 @@ export default function AcademyLanding({
                       ))}
                     </ul>
                   </div>
-
+                </CardContent>
+                <CardFooter>
                   <div className="pt-4 border-t">
                     <p className="font-semibold text-green-600">{t.pricing.oneOnOne.bonus}</p>
                   </div>
-                </CardContent>
+                </CardFooter>
               </Card>
             </div>
           </div>
