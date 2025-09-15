@@ -5,6 +5,7 @@ import { Components } from "react-markdown"
 import ReactMarkdown from "react-markdown"
 import Link from "next/link"
 import Image from "next/image"
+import { track } from '@vercel/analytics';
 import {
   Button,
 } from "@/components/ui/button"
@@ -137,6 +138,13 @@ export default function AcademyLanding({
 }: Props) {
   const [locale, setLocale] = useState<Locale>(defaultLocale)
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const applyAction = useMemo(() => {
+    return (source = "Landing") => {
+      track("Form Open", { source });
+      window.open(formUrl, "_blank");
+    };
+  }, [formUrl]);
 
   const t = useMemo(() => {
     const common = {
@@ -576,7 +584,7 @@ export default function AcademyLanding({
                 {t.common.nav.faq[locale]}
               </button>
               <Button
-                onClick={() => (window.location.href = formUrl)}
+                onClick={() => applyAction("Landing Nav")}
                 className="bg-[#6246EA] hover:bg-[#543fd0]"
               >
                 {t.common.nav.apply[locale]}
@@ -624,7 +632,7 @@ export default function AcademyLanding({
                 <div className="flex items-center gap-2 pt-2">
                   <Button
                     className="flex-1 bg-[#6246EA] hover:bg-[#543fd0]"
-                    onClick={() => (window.location.href = formUrl)}
+                    onClick={() => applyAction("Landing Nav Mobile")}
                   >
                     {t.common.nav.apply[locale]}
                   </Button>
@@ -681,7 +689,7 @@ export default function AcademyLanding({
                 <Button
                   size="lg"
                   className="bg-[#6246EA] hover:bg-[#543fd0]"
-                  onClick={() => (window.location.href = formUrl)}
+                  onClick={() => applyAction("Landing Hero")}
                 >
                   {t.common.cta.primary[locale]}
                 </Button>
@@ -729,7 +737,7 @@ export default function AcademyLanding({
                 </div>
                 <div className="mt-6">
                   <Button
-                    onClick={() => (window.location.href = formUrl)}
+                    onClick={() => applyAction("About")}
                     className="bg-[#6246EA] hover:bg-[#543fd0]"
                   >
                     {t.common.cta.alt[locale]}
@@ -1103,7 +1111,7 @@ export default function AcademyLanding({
                   <Button
                     size="lg"
                     className="bg-white text-[#212429] hover:bg-white/90"
-                    onClick={() => (window.location.href = formUrl)}
+                    onClick={() => applyAction("Final CTA")}
                   >
                     {t.finalCta.button}
                   </Button>
