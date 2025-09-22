@@ -5,6 +5,7 @@ import { Components } from "react-markdown"
 import ReactMarkdown from "react-markdown"
 import Link from "next/link"
 import Image from "next/image"
+import { sendGAEvent } from '@next/third-parties/google'
 import { track } from '@vercel/analytics';
 import {
   Button,
@@ -142,6 +143,7 @@ export default function AcademyLanding({
   const applyAction = useMemo(() => {
     return (source = "Landing") => {
       track("Form Open", { source });
+      sendGAEvent("event", "Form Open", { source });
       window.open(formUrl, "_blank");
     };
   }, [formUrl]);
